@@ -8,17 +8,18 @@
 <body>
     <h1>Passeios</h1>
 
-    {% for passeio in lista_passeio %}
+    {% for passeio in lista_passeios %}
 
-<p>{{passeio.nome}}</p>
-<p>{{passeio.descricao}}</p>
-<p>{{passeio.valor}}</p>
+        <p>{{passeio.titulo}}</p>
+        <p>{{passeio.descricao}}</p>
+        <p>{{passeio.valor}}</p>
+        <a href="{% url 'editarPasseio' passeio.id %}">EDITAR</a>
+        <a href="{% url 'deletarPasseio' passeio.id %}">DELETAR</a>
 
+    {% empty %}
 
-{% empty %}
+        <p>Nenhum Passeio cadastrado</p>
 
-<p>Nenhum Passeio cadastrado</p>
-
-{% endfor %}
+    {% endfor %}
 </body>
 </html>
