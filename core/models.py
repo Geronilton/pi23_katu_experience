@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 class Usuario(AbstractUser):
     nome_completo = models.CharField("Nome", max_length=100)
-    telefone = models.IntegerField("Telefone", max_length=11)
+    telefone = models.IntegerField("Telefone")
     cpf = models.CharField("CPF", max_length=11, primary_key=True)
 
 class Passeio(models.Model):
