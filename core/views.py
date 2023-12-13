@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import CadastroForm,PasseioForm
 from .models import Usuario, Agendamento, Passeio
 from django.contrib.auth import authenticate, login
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -75,5 +75,6 @@ def autenticacao(request):
         return render(request, 'registration\login.html')
     
 
+@login_required
 def perfil(request):
     return render(request, 'perfil.html')
