@@ -1,0 +1,22 @@
+header{
+    border: 1px solid black;
+    margin: 10px;
+}
+nav{
+    border: 1px solid black;
+    margin: 10px;
+}
+main{
+    border: 1px solid black;
+    margin: 10px;
+}
+footer{
+    border: 1px solid black;
+    margin: 10px;
+}
+h2{
+    margin: 10px;
+}
+.infonav{
+    text-align: left;
+}
