@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CadastroForm,PasseioForm
 from .models import Usuario, Agendamento, Passeio
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ def cadastro(request):
         "form":form
     }
 
-    return render(request, "cadastro.html", contexto)
+    return render(request, "registration/cadastro.html", contexto)
 
 
 def passeios(request):
@@ -58,3 +59,21 @@ def deletarPasseio(request, id):
     passeio.delete()
 
     return redirect('passeios')
+
+def autenticacao(request):
+
+    if request.POST:
+        username = request.POST['usuario']
+        password = request.POST['senha']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('perfil')
+        else:
+           return render(request, 'registration\login.html')
+    else:
+        return render(request, 'registration\login.html')
+    
+
+def perfil(request):
+    return render(request, 'perfil.html')

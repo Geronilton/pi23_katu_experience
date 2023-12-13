@@ -4,7 +4,7 @@ from .models import Usuario, Passeio
 class CadastroForm(ModelForm):
     class Meta():
         model = Usuario
-        fields = ["nome_completo","telefone","email","cpf"]
+        fields = ["nome_completo","email","cpf"]
 
 class PasseioForm(ModelForm):
     class Meta():
