@@ -1,7 +1,12 @@
 from django.forms import ModelForm
-from .models import Cliente
+from .models import Usuario, Passeio
 
 class CadastroForm(ModelForm):
-    class meta:
-        model = Cliente
-        fields = ["nome","telefone","email","cpf"]
+    class Meta():
+        model = Usuario
+        fields = ["nome_completo","email","cpf"]
+
+class PasseioForm(ModelForm):
+    class Meta():
+        model = Passeio
+        fields = ["titulo", "descricao","valor"]
