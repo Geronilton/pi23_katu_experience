@@ -1,3 +1,5 @@
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,21 @@
     <h1>Cadastro</h1>
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        <p>{{form.nome_completo.label}}: 
+            {% render_field form.nome_completo %}
+        </p>
+
+        <p>{{ form.cpf.label}}: 
+            {% render_field form.cpf %}
+        </p>
+
+        <p>{{form.email.label}}:
+            {% render_field form.email %}
+        </p>
+
+        <p>Senha: {{ form.password1 }}</p>
+        <p>Confirme sua Senha: {{form.password2}} </p>
+
         <input type="submit" value="cadastrar">
     </form>
 </body>
