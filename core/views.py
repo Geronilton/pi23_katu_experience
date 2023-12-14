@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CadastroForm,PasseioForm
+from .forms import UsuarioForm,PasseioForm
 from .models import Usuario, Agendamento, Passeio
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -9,10 +9,10 @@ def index(request):
     return render(request, "index.html")
 
 def cadastro(request):
-    form = CadastroForm(request.POST or None)
+    form = UsuarioForm(request.POST or None)
     if form.is_valid():
         form.save()
-
+        return redirect('login')
     contexto={
         "form":form
     }

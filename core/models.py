@@ -7,6 +7,10 @@ class Usuario(AbstractUser):
     nome_completo = models.CharField("Nome", max_length=100)
     # telefone = models.IntegerField("Telefone")
     cpf = models.CharField("CPF", max_length=11, primary_key=True)
+    username = models.CharField('username', max_length=11, null=True)
+
+    USERNAME_FIELD = 'cpf'
+
 
 class Passeio(models.Model):
     titulo = models.CharField("Titulo", max_length= 100)
