@@ -1,10 +1,11 @@
 from django.forms import ModelForm
 from .models import Usuario, Passeio
+from django.contrib.auth.forms import UserCreationForm
 
-class CadastroForm(ModelForm):
-    class Meta():
+class UsuarioForm(UserCreationForm):
+    class Meta:
         model = Usuario
-        fields = ["nome_completo","email","cpf"]
+        fields = ['nome_completo', 'cpf', 'email', 'password1', 'password2']
 
 class PasseioForm(ModelForm):
     class Meta():
