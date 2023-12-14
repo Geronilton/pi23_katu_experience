@@ -1,7 +1,7 @@
 {% block interno %}
 <style type="text/css">
     .cabecalho{
-        height: 20%;
+        height: 15%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -9,19 +9,58 @@
         color: #F6F6E9;
         gap: 50px;
     }
+    .right-header{
+        gap: 10px;
+        display: grid;
+    }
+    .box-user
+    {
+        align-items: center;
+        right:5%;
+        justify-content: center;
+        position: relative;
+        display: flex;
+        gap: 10%;
+        list-style: none;
+    }
+    a
+    {
+        color: #F6F6E9;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover{
+        color: #75933D;
+    }
+
 </style>
 {% endblock interno %}
 
 <div class="cabecalho">
     <div><img class="imagens" src=""></div>
     <div><h1>KATU EXPERIÊNCIAS</h1></div>
-    <div class="menu">
-        <a href="{% url 'login' %}">Login</a>
-        <a href="{% url 'cadastro' %}">Cadastro</a>
+    <div class="right-header">
+        <div class="box-user">
+            <a href="">    
+                <div>
+                    <a href="{% url 'login' %}">Login</a>
+                </div>
+            </a>
+            <a href="">
+                <div class="box-cadastro">
+                    <a href="{% url 'cadastro' %}"> Cadastro </a>
+                </div>
+            </a>
+        </div>
+        <div class="icon">
+            <img src="static/img/icons/local.png" width= "40px" height="40px">
+            <img src="static/img/icons/tele.png" width= "40px" height="40px">
+            <img src="static/img/icons/wpp.png" width= "40px" height="40px">
+            <img src="static/img/icons/tele.png" width= "40px" height="40px">
+        </div>
     </div>
-    <div class="icon">
-        <img src="static/img/icons/local.png" width= "40px" height="40px">
-        <img src="static/img/icons/wpp.png" width= "40px" height="40px">
-        <img src="static/img/icons/tele.png" width= "40px" height="40px">
-    </div>
+    
+    
+
+
 </div>

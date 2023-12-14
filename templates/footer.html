@@ -1,18 +1,49 @@
 {% block interno %}
 <style type="text/css">
-    .rodape{
+    .footer-content{
         height: 20%;
         display: grid;
         justify-content:center;
         align-items: center;
         background-color: #2D441B;
         color: #F6F6E9;
+    }   
+    .footer-list
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+        gap: 100px;
     }
+    .footer-list ul
+    {
+        display: grid;
+        list-style: none;
+    }
+    h2{
+        margin-bottom: 10px;
+    } 
 </style>
 {% endblock interno %}
 
-<div class="rodape">
-    <p>Email: </p>
-    <p>Contato: </p>
-    <p>Telefone: </p>
+<div class="footer-content">
+    <div class="footer-list">
+        <ul>
+            <li><h2>ACESSO CLIENTE</h2></li>
+            <li><p>Acesse sua Conta</p></li>
+            <li><p>Cadastre-se</p></li>
+        </ul>
+        <ul>
+            <li><h2>ATENDIMENTO AO CLIENTE</h2></li>
+            <li><p>Dúvidas Frequentes</p></li>
+            <li><p>Fale Conosco</p></li>
+            <li><p>Alteração e Cancelamentos</p></li>
+        </ul>
+        <ul>
+            <li><h2>SOBRE NÓS</h2></li>
+            <li><p>Katu Experiencias</p></li>
+            <li><p>Politica de Privacidade</p></li>
+            <li><p>Termos e Condições</p></li>
+        </ul>
+    </div>
 </div>
