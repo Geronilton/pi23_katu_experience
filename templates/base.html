@@ -8,6 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katu Experiências</title>
     <link rel="stylesheet" href="{% static 'static/estilo.css' %}"/>
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+
+    <link href="{% static 'static/index.css' %}" rel="stylesheet">
+    <link href="{% static 'static/bootstrap.css' %}" rel="stylesheet">
 </head>
 <body>
     {% include 'header.html' %}
@@ -15,6 +34,9 @@
         {% block content %}{% endblock content %}
     </main>
     {% include 'footer.html' %}
+
+    <script src="index.js"></script>
+    
 </body>
 </html>
 
