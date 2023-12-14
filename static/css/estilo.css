@@ -13,26 +13,24 @@ html,body
 }
 main
 {
-    
-    display: flex;
+    display: grid;
+    width: 50vw;
+    height: 50vh;
     justify-content: center;
     align-items: center;
 }
-sidebar
-{
-    grid-area: sidebar;
-    background-color: #75933D;
-    text-align: right;
-    height: 100%;
-    width: 10000px;
-    display: flex;
-    justify-content: right;
-}
 .submenu
 {
+    background-color: #75933D;
+    text-align: right;
+    
     display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    margin: 15px;
+    justify-content: right;
+    padding: 20px;
 }
+
+
+
+
+
 
