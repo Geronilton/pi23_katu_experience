@@ -1,8 +1,7 @@
 {% block interno %}
 <style type="text/css">
     .cabecalho{
-        width: 100%;
-        height: 100%;
+        height: 20%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -17,8 +16,8 @@
     <div><img class="imagens" src=""></div>
     <div><h1>KATU EXPERIÊNCIAS</h1></div>
     <div class="menu">
-        <a href="">Login</a>
-        <a href="">Cadastro</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'cadastro' %}">Cadastro</a>
     </div>
     <div class="icon">
         <img src="static/img/icons/local.png" width= "40px" height="40px">
