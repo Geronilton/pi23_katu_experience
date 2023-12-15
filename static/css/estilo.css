@@ -18,19 +18,17 @@ main
     height: 50vh;
     justify-content: center;
     align-items: center;
-}
-.submenu
-{
-    background-color: #75933D;
-    text-align: right;
     
-    display: flex;
-    justify-content: right;
-    padding: 20px;
+    
 }
+/* Configuração do container Base das paginas */
 
-
-
+.container{
+    display: flex;
+    background-color: aquamarine;
+    width: 70%;
+    height: 40%;
+}
 
 
 
