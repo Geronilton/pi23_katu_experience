@@ -60,19 +60,19 @@ def deletarPasseio(request, id):
 
     return redirect('passeios')
 
-def autenticacao(request):
+# def autenticacao(request):
 
-    if request.POST:
-        username = request.POST['usuario']
-        password = request.POST['senha']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('perfil')
-        else:
-           return render(request, 'registration\login.html')
-    else:
-        return render(request, 'registration\login.html')
+#     if request.POST:
+#         username = request.POST['usuario']
+#         password = request.POST['senha']
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('perfil')
+#         else:
+#            return render(request, 'registration\login.html')
+#     else:
+#         return render(request, 'registration\login.html')
     
 
 @login_required
