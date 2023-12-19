@@ -13,10 +13,10 @@
         {
             background-color: #F6F6E9;
             width: auto;
-            height: auto;
+            height:100%;
             
         }
-        .h1
+        h1
         {
             text-align: center;
             padding-top: 20px;
@@ -27,7 +27,7 @@
             border-radius: 10px;
             width: 900px;
             height: 200px;
-            margin-left: 150px;
+            
             margin-bottom: 5px;
             margin-top: 10px;
         }
@@ -75,12 +75,17 @@
             color: #F6F6E9;
             margin-left: 220px;
         }
+        body
+        {
+            display: flex;
+            justify-content: center;
+        }
     </style>
     <title>Passeios</title>
 </head>
 <body>
     <div class="container">
-        <div class="h1"><h1>Passeios</h1></div>
+        <h1>Passeios</h1>
 
         {% for passeio in lista_passeios %}
 
