@@ -37,7 +37,7 @@
             text-align: justify;
             margin-top: 15px;
             margin-left: 220px;
-            padding-top: 30px;
+            padding-top: 10px;
         }
         .descricao
         {
@@ -53,6 +53,28 @@
             margin-top: 30px;
             margin-left: 220px;
         }
+        .editar
+        {
+            background-color: #F6F6E9;
+            border-radius: 10px;
+            width: 80px;
+            height: 17px;
+            text-align: center;
+            margin-bottom: 5px;
+            color: black;
+            margin-left: 220px;
+            margin-top: 20px;
+        }
+        .deletar
+        {
+            background-color: rgb(194, 11, 11);
+            border-radius: 10px;
+            width: 80px;
+            height: 17px;
+            text-align: center;
+            color: #F6F6E9;
+            margin-left: 220px;
+        }
     </style>
     <title>Passeios</title>
 </head>
@@ -63,13 +85,14 @@
         {% for passeio in lista_passeios %}
 
         <div class="passeio">
-            <div class="titulo"><p>{{passeio.titulo}}</p></div>
+            <div class="titulo"><h3>{{passeio.titulo}}</h3></div>
             <div class="descricao"><p>{{passeio.descricao}}</p></div>
-            <div class="valor"><p>{{passeio.valor}}</p></div>
+            <div class="valor"><h3>{{passeio.valor}}</h3></div>
+        
+            <div class="editar"><a href="{% url 'editarPasseio' passeio.id %}">EDITAR</a></div>
+            <div class="deletar"><a href="{% url 'deletarPasseio' passeio.id %}">DELETAR</a></div>
         </div>
-        <div class="h1"><a href="{% url 'editarPasseio' passeio.id %}">EDITAR</a>
-        <a href="{% url 'deletarPasseio' passeio.id %}">DELETAR</a></div>
-
+        
         {% empty %}
 
         <p>Nenhum Passeio cadastrado</p>
