@@ -1,18 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}"/>
-    <link href="{% static 'css/cadastrarPasseio.css' %}" type="text/css" rel="stylesheet">
-    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
 
+{% extends 'base.html' %}
 
-</head>
-<body>
-    {% include 'header.html' %}
+    {% block content %}
     <img src="static/img/icons/usuario.png" alt="imagem-usuario">
     <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
     <div class="links">
@@ -39,6 +28,4 @@
             <input type="submit" value="cadastrar">
         </form>
     </div>
-
-</body>
-</html>
+    {% endblock content %}
