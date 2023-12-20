@@ -1,10 +1,9 @@
+
+{% extends 'base.html' %}
+
 {% load widget_tweaks %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block interno1 %}
     <style type="text/css">
         *
         {
@@ -64,9 +63,12 @@
             margin-top: 35px;
         }
     </style>
-    <title>Document</title>
-</head>
-<body>
+    {% endblock interno1 %}
+
+    {% block content %}
+    <div class="container">
+
+    
     <div class="cadastro">
         <h1>Cadastro</h1>
         <form method="post">
@@ -91,5 +93,5 @@
                 <p><input class="submit" type="submit" value="cadastrar"></p>
         </form>
     </div>
-</body>
-</html>
+    </div>
+    {% endblock content %}

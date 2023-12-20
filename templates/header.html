@@ -1,4 +1,7 @@
+{% load static %}
+
 {% block interno %}
+
 <style type="text/css">
     .cabecalho{
         height: 15%;
@@ -7,7 +10,8 @@
         align-items: center;
         background-color: #2D441B;
         color: #F6F6E9;
-        gap: 50px;
+        margin-bottom: 50px;
+        padding: 15px;
     }
     .right-header{
         gap: 10px;
@@ -20,12 +24,15 @@
         justify-content: center;
         position: relative;
         display: flex;
-        gap: 10%;
+        gap: 7%;
         list-style: none;
+    }
+    .box-cadastro{
+        border-left: 10px, rgb(255, 255, 255);
     }
     a
     {
-        color: #F6F6E9;
+        color: white;
         text-decoration: none;
         font-weight: bold;
         width: auto;
@@ -38,42 +45,51 @@
     nav{
         background-color: #75933D;
         list-style-type: none;
-        height: 35px;
+        height: 55px;
+        margin-top: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        box-shadow: 0 0.1rem 0.5rem #2D441B;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
     }
-    li{
-        text-align: right;
+    nav > li{
         padding-right: 5%;
+        padding-top: 3px;
     }
 
 </style>
 {% endblock interno %}
 
 <div class="cabecalho">
-    <div><img class="imagens" src=""></div>
-    <div><h1>KATU EXPERIÊNCIAS</h1></div>
+    <img src="{% static 'img/img_logo/imagen_da_logo.jpg' %}" alt="Icon" width= "18%">
     <div class="right-header">
         <div class="box-user">
-            <a href="">    
-                <div>
-                    <a href="{% url 'login' %}">Login</a>
+            {% if not user.is_authenticated %}
+                <div>                
+                    <a href="{% url 'login' %}">LOGIN</a>
                 </div>
-            </a>
-            <a href="">
+
                 <div class="box-cadastro">
-                    <a href="{% url 'cadastro' %}"> Cadastro </a>
+                    <a href="{% url 'cadastro' %}"> CADASTRO </a>
                 </div>
-            </a>
+                {% else %}
+                <a href="{% url 'perfil' %}">Perfil</a>
+                {% endif %}
+
         </div>
         <div class="icon">
-            <img src="static/img/icons/local.png" width= "40px" height="40px">
-            <img src="static/img/icons/tele.png" width= "40px" height="40px">
-            <img src="static/img/icons/wpp.png" width= "40px" height="40px">
-            <img src="static/img/icons/tele.png" width= "40px" height="40px">
+            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/local.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/wpp.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
         </div>
     </div>
 
 </div>
 
 <nav>
-        <li><a href="{% url 'passeios' %}">Lista Passeios</a></li>
-    </nav>
+    <li><a href="{% url 'passeios' %}"><h3>Listar Passeios</h3></a></li>
+</nav>

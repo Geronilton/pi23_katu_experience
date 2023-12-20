@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css">
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-        .container
-        {
-            background-color: #F6F6E9;
-            width: auto;
-            height: auto;
-            
-        }
-        .h1
-        {
-            text-align: center;
-        }
-    </style>
-    <title>Cadastrar Passeios</title>
-</head>
-<body>
-    <div class="container">
-        <div class="h1"><h1>Cadastrar Passeio</h1></div>
-        <div class="cadastro">
-            <form method="post">
-                {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="cadastrar">
-            </form>
-        </div>
+
+{% extends 'base.html' %}
+
+    {% block content %}
+    <img src="static/img/icons/usuario.png" alt="imagem-usuario">
+    <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
+    <div class="links">
+        <br>
+        <a id="linkes" href="">Agendamentos</a>
+        <br>
+        <div id="linha-horizontal"></div>
+        
+        <a id="linkes" href="{% url 'index' %}">Passeios</a>
+        <br>
+        <div id="linha-horizontal"></div>
+        
+        <a id="linkes" href="">Agendamentos</a>
+        <br>
+        <div id="linha-horizontal"></div>
     </div>
-</body>
-</html>
+    <br>
+    <div id="linha-vertical"></div>
+    <div class="disgraca">
+        <h1>Cadastrar Passeio</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="cadastrar">
+        </form>
+    </div>
+    {% endblock content %}
