@@ -1,24 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .container
+        {
+            background-color: #F6F6E9;
+            width: auto;
+            height:100%;
+            
+        }
+        h1
+        {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .passeio
+        {
+            background-color: #2D441B;
+            border-radius: 10px;
+            width: 900px;
+            height: 200px;
+            
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .titulo
+        {
+            color: #F6F6E9;
+            text-align: justify;
+            margin-top: 15px;
+            margin-left: 220px;
+            padding-top: 10px;
+        }
+        .descricao
+        {
+            color: #F6F6E9;
+            text-align: justify;
+            margin-top: 20px;
+            margin-left: 220px;
+        }
+        .valor
+        {
+            color: #F6F6E9;
+            text-align: justify;
+            margin-top: 30px;
+            margin-left: 220px;
+        }
+        .editar
+        {
+            background-color: #F6F6E9;
+            border-radius: 10px;
+            width: 80px;
+            height: 17px;
+            text-align: center;
+            margin-bottom: 5px;
+            color: black;
+            margin-left: 220px;
+            margin-top: 20px;
+        }
+        .deletar
+        {
+            background-color: rgb(194, 11, 11);
+            border-radius: 10px;
+            width: 80px;
+            height: 17px;
+            text-align: center;
+            color: #F6F6E9;
+            margin-left: 220px;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <title>Passeios</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Passeios</h1>
 
-{% extends 'base.html' %}
+        {% for passeio in lista_passeios %}
 
-
-{% block content %}
-
-    <h1>Passeios</h1>
-
-    {% for passeio in lista_passeios %}
-
-        <p>{{passeio.titulo}}</p>
-        <p>{{passeio.descricao}}</p>
-        <p>{{passeio.valor}}</p>
-        <a href="{% url 'editarPasseio' passeio.id %}">EDITAR</a>
-        <a href="{% url 'deletarPasseio' passeio.id %}">DELETAR</a>
-
-    {% empty %}
+        <div class="passeio">
+            <div class="titulo"><h3>{{passeio.titulo}}</h3></div>
+            <div class="descricao"><p>{{passeio.descricao}}</p></div>
+            <div class="valor"><h3>{{passeio.valor}}</h3></div>
+        
+            <div class="editar"><a href="{% url 'editarPasseio' passeio.id %}">EDITAR</a></div>
+            <div class="deletar"><a href="{% url 'deletarPasseio' passeio.id %}">DELETAR</a></div>
+        </div>
+        
+        {% empty %}
 
         <p>Nenhum Passeio cadastrado</p>
 
-    {% endfor %}
-
-{% endblock %}
-
+        {% endfor %}
+    </div>
+</body>
+</html>

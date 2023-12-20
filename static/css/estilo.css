@@ -8,26 +8,21 @@ html,body
 {
     box-sizing: border-box;
     font-family: 'Atkinson Hyperlegible', sans-serif;
-    width: 100vw;
-    height: 100vh;
 }
-main
-{
-    display: grid;
-    width: 50vw;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    
-    
+main{
+    width: 100%;
 }
-/* Configuração do container Base das paginas */
 
+/* Configuração do container Base das paginas */
 .container{
+    width: 100vw;
+    height: 75vh;
     display: flex;
-    background-color: aquamarine;
-    width: 70%;
-    height: 40%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(170, 114, 114);
+    margin-top: 50px;
+    border-radius: 2%;  
 }
 
 
