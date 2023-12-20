@@ -28,9 +28,21 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
+        width: auto;
+        height: auto;
     }
     a:hover{
-        color: #75933D;
+        color: #dde03e;
+    }
+
+    nav{
+        background-color: #75933D;
+        list-style-type: none;
+        height: 35px;
+    }
+    li{
+        text-align: right;
+        padding-right: 5%;
     }
 
 </style>
@@ -59,8 +71,9 @@
             <img src="static/img/icons/tele.png" width= "40px" height="40px">
         </div>
     </div>
-    
-    
-
 
 </div>
+
+<nav>
+        <li><a href="{% url 'passeios' %}">Lista Passeios</a></li>
+    </nav>
