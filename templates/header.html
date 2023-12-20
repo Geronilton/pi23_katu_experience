@@ -1,4 +1,7 @@
+{% load static %}
+
 {% block interno %}
+
 <style type="text/css">
     .cabecalho{
         height: 15%;
@@ -7,7 +10,8 @@
         align-items: center;
         background-color: #2D441B;
         color: #F6F6E9;
-        gap: 50px;
+        margin-bottom: 50px;
+        padding: 15px;
     }
     .right-header{
         gap: 10px;
@@ -25,7 +29,7 @@
     }
     a
     {
-        color: #F6F6E9;
+        color: white;
         text-decoration: none;
         font-weight: bold;
         width: auto;
@@ -38,10 +42,13 @@
     nav{
         background-color: #75933D;
         list-style-type: none;
-        height: 35px;
+        height: 40px;
+        margin-top: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
     }
-    li{
-        text-align: right;
+    nav > li{
         padding-right: 5%;
         padding-top: 3px;
     }
@@ -68,15 +75,20 @@
 
         </div>
         <div class="icon">
-            <img src="static/img/icons/local.png" width= "40px" height="40px">
-            <img src="static/img/icons/tele.png" width= "40px" height="40px">
-            <img src="static/img/icons/wpp.png" width= "40px" height="40px">
-            <img src="static/img/icons/tele.png" width= "40px" height="40px">
+            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/local.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/wpp.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
         </div>
     </div>
 
 </div>
 
 <nav>
+<<<<<<< HEAD
     <li><a href="{% url 'passeios' %}">Lista Passeios</a></li>
 </nav>
+=======
+        <li><a href="{% url 'passeios' %}">Lista Passeios</a></li>
+</nav>
+>>>>>>> 493f13f4f940f08762dd5a0b2fc633bfa0a3f2a6

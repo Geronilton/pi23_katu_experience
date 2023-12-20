@@ -1,0 +1,62 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#paragrafo
+{
+    color: black;
+    font-size: 15px;
+    padding-left: 100px;
+    top: 300px;
+    display: flex;
+    position: absolute;
+
+}
+#linha-horizontal
+{
+    border-bottom: 3px solid black;
+    margin-left: -4px;
+    width: 350px;
+    display: flex;
+    
+}
+#linha-vertical
+{
+    border-left: 3px solid #2D441B;
+    height: 500px;
+    left: 350px;
+    margin-left: -4px;
+    position: absolute;
+    display: flex;
+}
+.disgraca
+{
+    padding-left: 400px;
+    padding-top: 30px;
+}
+#linkes
+{
+    color: black;
+    padding-left: 100px;
+    position: absolute;
+    display: flex;
+}
+#linkes:hover
+{
+    color: #2D441B;
+}
+.links
+{
+    padding-top: 1px;
+    padding-top: 250px;
+    font-size: 22px;
+    position: absolute;
+      
+}
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
