@@ -24,8 +24,11 @@
         justify-content: center;
         position: relative;
         display: flex;
-        gap: 10%;
+        gap: 7%;
         list-style: none;
+    }
+    .box-cadastro{
+        border-left: 10px, rgb(255, 255, 255);
     }
     a
     {
@@ -42,11 +45,15 @@
     nav{
         background-color: #75933D;
         list-style-type: none;
-        height: 40px;
+        height: 55px;
         margin-top: -50px;
         display: flex;
         align-items: center;
         justify-content: end;
+        box-shadow: 0 0.1rem 0.5rem #2D441B;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
     }
     nav > li{
         padding-right: 5%;
@@ -56,18 +63,17 @@
 {% endblock interno %}
 
 <div class="cabecalho">
-    <div><img class="imagens" src=""></div>
-    <div><h1>KATU EXPERIÊNCIAS</h1></div>
+    <img src="{% static 'img/img_logo/imagen_da_logo.jpg' %}" alt="Icon" width= "18%">
     <div class="right-header">
         <div class="box-user">
             <a href="">    
                 <div>
-                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'login' %}">LOGIN</a>
                 </div>
             </a>
             <a href="">
                 <div class="box-cadastro">
-                    <a href="{% url 'cadastro' %}"> Cadastro </a>
+                    <a href="{% url 'cadastro' %}"> CADASTRO </a>
                 </div>
             </a>
         </div>
@@ -82,5 +88,5 @@
 </div>
 
 <nav>
-        <li><a href="{% url 'passeios' %}">Lista Passeios</a></li>
+        <li><a href="{% url 'passeios' %}"><h3>Listar Passeios</h3></a></li>
 </nav>
