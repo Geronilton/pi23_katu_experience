@@ -8,6 +8,10 @@
 <body>
     <h1>Pagina Perfil</h1>
     <p> Olá {{ user.nome_completo }},Seja bem-vindo! </p>
+
+    {% if user.is_superuser %}
+    <p>Gerenciar Usuários</p>
+    {% endif %}
     <a href="{% url 'logout' %}">Sair</a>
 </body>
 </html>
