@@ -34,6 +34,6 @@ urlpatterns = [
     path('cadastrarPasseio/', cadastrarPasseio, name= 'cadastrarPasseio'),
     path('editarPasseio/<int:id>/',editarPasseio, name= 'editarPasseio'),
     path('deletarPasseio/<int:id>/',deletarPasseio, name= 'deletarPasseio'),
-    path("agendamento/", agendamento, name="agendamento"),
+    path("agendamento/<int:id>/", agendamento, name="agendamento"),
 
 ]

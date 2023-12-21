@@ -95,15 +95,18 @@ def perfil(request):
     return render(request, 'perfil.html')
 
 
-def agendamento(request):
+def agendamento(request,id):
     form = AgendamentoForm(request.POST or None)
+    passeio = Passeio.objects.get(pk=id)
+    passeio = passeio.titulo
     if form.is_valid():
         agendamento = form.save(commit=False)
         agendamento.usuario = request.user
         agendamento.save()
         return redirect(passeios)
     contexto = {
-        "form": form
+        "form": form,
+        "passeio": passeio
     }
 
     return render(request, 'agendamento.html', contexto)
