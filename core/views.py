@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UsuarioForm,PasseioForm
+from .forms import UsuarioForm,PasseioForm, AgendamentoForm
 from .models import Usuario, Agendamento, Passeio
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -78,3 +78,17 @@ def deletarPasseio(request, id):
 @login_required
 def perfil(request):
     return render(request, 'perfil.html')
+
+
+def agendamento(request):
+    form = AgendamentoForm(request.POST or None)
+    if form.is_valid():
+        agendamento = form.save(commit=False)
+        agendamento.usuario = request.user
+        agendamento.save()
+        return redirect(passeios)
+    contexto = {
+        "form": form
+    }
+
+    return render(request, 'agendamento.html', contexto)
