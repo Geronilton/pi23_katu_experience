@@ -1,7 +1,6 @@
 
 {% extends 'base.html' %}
 
-{% load widget_tweaks %}
 
     {% block interno1 %}
     <style type="text/css">
@@ -70,7 +69,7 @@
 
     
     <div class="cadastro">
-        <h1>Cadastro</h1>
+        <h1>Cadastra um Administrador</h1>
         <form method="post">
                 {% csrf_token %}
                 <p>{{form.nome_completo.label}}: 
