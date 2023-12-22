@@ -5,6 +5,12 @@
     {% block content %}
     <img id="usuary" src="{% static 'img/icons/usuario1.png' %}" alt="img_usuario" width= "110px" height="100px">
     <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
+
+    {% if user.is_superuser %}
+    <p>Gerenciar Usuários</p>
+    {% endif %}
+    <a href="{% url 'logout' %}">Sair</a>
+    
     <div class="links">
         <br>
         <a id="linkes" href="">Agendamentos</a>

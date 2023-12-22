@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Usuario, Passeio
+from .models import Usuario, Passeio , Agendamento
 from django.contrib.auth.forms import UserCreationForm
 
 class UsuarioForm(UserCreationForm):
@@ -11,3 +11,8 @@ class PasseioForm(ModelForm):
     class Meta():
         model = Passeio
         fields = ["titulo", "descricao","valor"]
+
+class AgendamentoForm(ModelForm):
+    class Meta():
+        model = Agendamento
+        fields = ["data_proposta","qtd_pessoas","passeio"]

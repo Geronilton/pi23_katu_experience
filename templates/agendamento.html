@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% load widget_tweaks %}
+    
+{% block content %}
+    <h1>Agendamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h5>{{form.passeio.label}}: {{passeio}}</h5>
+        <p>{{form.data_proposta.label}}: 
+            {% render_field form.data_proposta %}
+        </p>
+            <p>{{ form.qtd_pessoas.label}}: 
+                {% render_field form.qtd_pessoas %}
+            </p>
+        <input type="submit" value="Confirmar Agendamento">
+    </form>
+{% endblock content %}
+
+
