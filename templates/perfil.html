@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pagina Perfil</h1>
-    <p> Olá {{ user.nome_completo }},Seja bem-vindo! </p>
-    <a href="{% url 'logout' %}">Sair</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+    {% block content %}
+    <img id="usuary" src="{% static 'img/icons/usuario1.png' %}" alt="img_usuario" width= "110px" height="100px">
+    <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
+    <div class="links">
+        <br>
+        <a id="linkes" href="">Agendamentos</a>
+        <br>
+        <div id="linha-horizontal"></div>
+        
+        <a id="linkes" href="{% url 'passeios' %}">Passeios</a>
+        <br>
+        <div id="linha-horizontal"></div>
+        
+        <a id="linkes" href="{% url 'cadastrarPasseio' %}">Adicionar Passeio</a>
+        <br>
+        <div id="linha-horizontal"></div>
+    </div>
+    <br>
+    <div id="linha-vertical"></div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br><br><br><br><br><br>
+    {% endblock content %}
+
+    

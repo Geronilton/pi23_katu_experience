@@ -30,6 +30,33 @@
         font-size: 3.5rem;
       }
     }
+
+
+    .footer-content{
+        height: 20%;
+        display: grid;
+        justify-content:center;
+        align-items: center;
+        background-color: #2D441B;
+        color: #F6F6E9;
+        margin-top: 80px;
+    }   
+    .footer-list
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
+        gap: 100px;
+    }
+    .footer-list ul
+    {
+        display: grid;
+        list-style: none;
+    }
+    .footer-list ul > li{
+        margin: -5px;
+    }
+
   </style>
 
 
@@ -38,11 +65,15 @@
     <header>
       {% include 'header.html' %}
     </header>
+    
+    
     <main>
       {% block content %}
         
       {% endblock content %}
     </main>
+
+
     <footer>
       {% include 'footer.html' %}
     </footer>

@@ -1,8 +1,10 @@
 
 {% extends 'base.html' %}
 
+{% load static %}
+
     {% block content %}
-    <img src="static/img/icons/usuario.png" alt="imagem-usuario">
+    <img id="usuary" src="{% static 'img/icons/usuario1.png' %}" alt="img_usuario" width= "110px" height="100px">
     <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
     <div class="links">
         <br>
@@ -14,13 +16,14 @@
         <br>
         <div id="linha-horizontal"></div>
         
-        <a id="linkes" href="">Agendamentos</a>
+        <a id="linkes" href="">Adicionar Passeio</a>
         <br>
         <div id="linha-horizontal"></div>
     </div>
     <br>
     <div id="linha-vertical"></div>
-    <div class="disgraca">
+    </div>
+    <div class="CP">
         <h1>Cadastrar Passeio</h1>
         <form method="post">
             {% csrf_token %}
@@ -29,3 +32,5 @@
         </form>
     </div>
     {% endblock content %}
+
+    
