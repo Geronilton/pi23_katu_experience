@@ -1,5 +1,5 @@
 .carousel {
-  margin-bottom: 4rem;
+  margin-bottom: -5rem;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -53,3 +53,4 @@
   /* rtl:remove */
   letter-spacing: -.05rem;
 }
+
