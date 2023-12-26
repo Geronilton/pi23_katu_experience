@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -84,6 +87,9 @@
     <title>Passeios</title>
 </head>
 <body>
+
+{% block content %}
+
     <div class="container">
         <h1>Passeios</h1>
 
@@ -104,5 +110,7 @@
 
         {% endfor %}
     </div>
+
+{% endblock %}
 </body>
 </html>
