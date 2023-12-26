@@ -7,7 +7,7 @@
     <h1>Agendamento</h1>
     <form method="post">
         {% csrf_token %}
-        <h5>{{form.passeio.label}}: {{passeio}}</h5>
+        <h5>Passeio: {{form.passeio}}</h5>
         <p>{{form.data_proposta.label}}: 
             {% render_field form.data_proposta %}
         </p>
