@@ -110,3 +110,10 @@ def agendamento(request,id):
     }
 
     return render(request, 'agendamento.html', contexto)
+
+def admAgendamentos(request):
+    agendamento= Agendamento.objects.all()
+    contexto = {
+        'agenda':agendamento
+    }
+    return render(request , "admAgendamento.html", contexto)

@@ -1,0 +1,26 @@
+
+
+
+{% for agenda in agendamento %}
+<table style="border: 1px black solid;">
+    <tr style="border: 1px black solid;">
+        <td>Data requisitada</td>
+        <td>Quantidade do grupo</td>
+        <td>Passeio</td>
+    </tr>
+    <tr>       
+        <td>{{agenda.data_proposta}}</td>
+        <td>{{agenda.qtd_pessoas}}</td>
+        <td>{{agenda.passeio_id}}</td>
+       
+    </tr>
+
+
+
+</table>
+{% empty %}
+
+        <p>Nada na Agenda</p>
+
+
+{% endfor %}

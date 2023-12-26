@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento
+from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
 from core.views import cadastro, perfil, cadastro_admin
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -35,5 +35,7 @@ urlpatterns = [
     path('editarPasseio/<int:id>/',editarPasseio, name= 'editarPasseio'),
     path('deletarPasseio/<int:id>/',deletarPasseio, name= 'deletarPasseio'),
     path("agendamento/<int:id>/", agendamento, name="agendamento"),
+    path("admAgendamentos/", admAgendamentos, name="admAgendamentos"),
+
 
 ]
