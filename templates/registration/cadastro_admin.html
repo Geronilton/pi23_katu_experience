@@ -1,0 +1,96 @@
+
+{% extends 'base.html' %}
+
+
+    {% block interno1 %}
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .container
+        {
+            background-color: #F6F6E9;
+            width: auto;
+            height: auto;
+            
+        }
+        .cadastro
+        {
+            border-radius: 10px;
+            background-color: #2D441B;
+            height: 300px;
+            width: 400px;
+            color: #F6F6E9;
+        }
+        h1
+        {
+            padding-top: 25px;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            margin-top: 10%;
+        }
+        p
+        {
+            text-align: justify;
+            margin-bottom: 7px;
+            display: flex;
+            justify-content: center;
+
+        }
+        .cpf
+        {
+            margin-left: 10px;
+        }
+        .submit
+        {
+            background-color: #2D441B;
+            color: #F6F6E9;
+            margin-top: 10px;
+            position:absolute;
+            height: 25px;
+            width: 70px;
+        }
+        .senha
+        {
+            margin-top: 35px;
+        }
+    </style>
+    {% endblock interno1 %}
+
+    {% block content %}
+    <div class="container">
+
+    
+    <div class="cadastro">
+        <h1>Cadastra um Administrador</h1>
+        <form method="post">
+                {% csrf_token %}
+                <p>{{form.nome_completo.label}}: 
+                    {% render_field form.nome_completo %}
+                </p>
+
+                <div class="cpf">
+                    <p>{{ form.cpf.label}}: 
+                        {% render_field form.cpf %}
+                    </p>
+                </div>
+
+                <p>{{form.email.label}}:
+                    {% render_field form.email %}
+                </p>
+
+                <p>Senha: {{ form.password1 }}</p>
+                <p class="senha">Confirme sua Senha:{{form.password2}} </p>
+
+                <p><input class="submit" type="submit" value="cadastrar"></p>
+        </form>
+    </div>
+    </div>
+    {% endblock content %}

@@ -19,6 +19,21 @@ def cadastro(request):
 
     return render(request, "registration/cadastro.html", contexto)
 
+def cadastro_admin(request):
+    if request.user.is_superuser:
+        form = UsuarioForm(request.POST or None)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            usuario.is_superuser = True
+            usuario.save()
+            return redirect('login')
+        contexto={
+            "form":form
+        }
+        return render(request, "registration/cadastro_admin.html", contexto)
+    else:
+        return redirect('login')
+
 
 def passeios(request):
     passeios = Passeio.objects.all()
@@ -80,15 +95,18 @@ def perfil(request):
     return render(request, 'perfil.html')
 
 
-def agendamento(request):
+def agendamento(request,id):
     form = AgendamentoForm(request.POST or None)
+    passeio = Passeio.objects.get(pk=id)
+    passeio = passeio.titulo
     if form.is_valid():
         agendamento = form.save(commit=False)
         agendamento.usuario = request.user
         agendamento.save()
         return redirect(passeios)
     contexto = {
-        "form": form
+        "form": form,
+        "passeio": passeio
     }
 
     return render(request, 'agendamento.html', contexto)
