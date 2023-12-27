@@ -9,7 +9,7 @@
     <div class="links">
         <br> 
         {% if user.is_superuser %}
-        <a id="linkes" href="">Agendamentos</a>
+        <a id="linkes" href="{% url 'admAgendamentos' %}">Agendamentos</a>
         <br>
         <div id="linha-horizontal"></div>
         
@@ -28,6 +28,7 @@
         <br>
         <div id="linha-horizontal"></div>
         {% endif %}
+
         <a id="linkes" href="{% url 'logout' %}" style="color: red;">Sair</a>
         <br>
        
