@@ -3,6 +3,7 @@ from .forms import UsuarioForm,PasseioForm, AgendamentoForm
 from .models import Usuario, Agendamento, Passeio
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Create your views here.
 
 def index(request):
@@ -18,6 +19,19 @@ def cadastro(request):
     }
 
     return render(request, "registration/cadastro.html", contexto)
+
+
+@login_required
+def dados(request, id):
+    user = User.objects.get(pk=id)
+    form = UsuarioForm(request.POST or None, instance=user)
+    if form.is_valid():
+        form.save()
+        return redirect('perfil')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'registration/cadastro.html', contexto)
 
 def cadastro_admin(request):
     if request.user.is_superuser:
@@ -98,10 +112,12 @@ def perfil(request):
 def agendamento(request,id):
     form = AgendamentoForm(request.POST or None)
     passeio = Passeio.objects.get(pk=id)
-    passeio = passeio.titulo
+    #passeio = passeio.titulo
     if form.is_valid():
         agendamento = form.save(commit=False)
         agendamento.usuario = request.user
+        #passeio_id = request.POST['passeio']
+        
         agendamento.save()
         return redirect(passeios)
     contexto = {

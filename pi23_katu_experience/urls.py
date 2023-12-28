@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
-from core.views import cadastro, perfil, cadastro_admin
+from core.views import cadastro, perfil, cadastro_admin,dados
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name= 'index'),
     path('cadastro/',cadastro , name= 'cadastro'),
+    path('dados/<int:id>/', dados, name='dados'),
     path('cadastro_admin/',cadastro_admin , name= 'cadastro_admin'),
 
     path('passeios/', passeios, name= 'passeios'),
