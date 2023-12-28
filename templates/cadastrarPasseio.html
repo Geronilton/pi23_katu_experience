@@ -4,32 +4,34 @@
 {% load static %}
 
     {% block content %}
-    <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "110px" height="110px">
-    <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
-    <div class="links">
+    <div class="conteudo">
+        <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "110px" height="110px">
+        <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
+        <div class="links">
+            <br>
+            <a id="linkes" href="">Agendamentos</a>
+            <br>
+            <div id="linha-horizontal"></div>
+            
+            <a id="linkes" href="{% url 'index' %}">Passeios</a>
+            <br>
+            <div id="linha-horizontal"></div>
+            
+            <a id="linkes" href="">Adicionar Passeio</a>
+            <br>
+            <div id="linha-horizontal"></div>
+        </div>
         <br>
-        <a id="linkes" href="">Agendamentos</a>
-        <br>
-        <div id="linha-horizontal"></div>
-        
-        <a id="linkes" href="{% url 'index' %}">Passeios</a>
-        <br>
-        <div id="linha-horizontal"></div>
-        
-        <a id="linkes" href="">Adicionar Passeio</a>
-        <br>
-        <div id="linha-horizontal"></div>
-    </div>
-    <br>
-    <div id="linha-vertical"></div>
-    </div>
-    <div class="CP">
-        <h1>Cadastrar Passeio</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="cadastrar">
-        </form>
+        <div id="linha-vertical"></div>
+        </div>
+        <div class="CP">
+            <h1>Cadastrar Passeio</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="cadastrar">
+            </form>
+        </div>
     </div>
     {% endblock content %}
 
