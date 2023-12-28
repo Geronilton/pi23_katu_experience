@@ -116,14 +116,17 @@ def perfil(request):
 def agendamento(request,id):
     form = AgendamentoForm(request.POST or None)
     passeio = Passeio.objects.get(pk=id)
-    #passeio = passeio.titulo
     if form.is_valid():
         agendamento = form.save(commit=False)
-        agendamento.usuario = request.user
-        #passeio_id = request.POST['passeio']
-        
+        agendamento.usuario = request.user     
         agendamento.save()
-        return redirect(passeios)
+        msg_sucesso="Agendamento realizado com sucesso!"
+        contexto = {
+            "form": form,
+            "passeio": passeio,
+            "mensagem": msg_sucesso
+        }
+        return render(request, 'agendamento.html', contexto)
     contexto = {
         "form": form,
         "passeio": passeio
@@ -137,3 +140,12 @@ def admAgendamentos(request):
         'agendamento':agenda
     }
     return render(request , "admAgendamento.html", contexto)
+
+
+def user_passeios(request):
+    agendamentos = Agendamento.objects.filter(usuario=request.user)
+    contexto = {
+        'agendamentos':agendamentos,
+
+    }
+    return render(request,'user_passeios.html',contexto)

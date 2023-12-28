@@ -5,6 +5,9 @@
     
 {% block content %}
     <h1>Agendamento</h1>
+    {% if mensagem %}
+        {{mensagem}}
+    {% endif %}
     <form method="post">
         {% csrf_token %}
         <h5>Passeio: {{passeio.titulo}}</h5>
