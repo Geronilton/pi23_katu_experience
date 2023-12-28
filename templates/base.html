@@ -30,16 +30,18 @@
         font-size: 3.5rem;
       }
     }
-
-
+    body
+    {
+      background-color: #F6F6E9;
+    }
     .footer-content{
-        height: 20%;
+        height: 200px;
         display: grid;
         justify-content:center;
         align-items: center;
         background-color: #2D441B;
         color: #F6F6E9;
-        margin-top: 80px;
+  
     }   
     .footer-list
     {
@@ -62,6 +64,7 @@
 
 </head>
 <body>
+  <div class="conteiner">
     <header>
       {% include 'header.html' %}
     </header>
@@ -79,7 +82,7 @@
     </footer>
 
     <script src="static/js/index.js"></script>
-    
+    </div>
 </body>
 </html>
 
