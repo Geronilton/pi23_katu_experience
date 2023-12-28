@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name= 'index'),
     path('cadastro/',cadastro , name= 'cadastro'),
-    path('dados/<int:id>/', dados, name='dados'),
+    path('dados/<str:cpf>/', dados, name='dados'),
     path('cadastro_admin/',cadastro_admin , name= 'cadastro_admin'),
 
     path('passeios/', passeios, name= 'passeios'),

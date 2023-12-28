@@ -22,8 +22,8 @@ def cadastro(request):
 
 
 @login_required
-def dados(request, id):
-    user = User.objects.get(pk=id)
+def dados(request, cpf):
+    user = Usuario.objects.get(cpf=cpf)
     form = UsuarioForm(request.POST or None, instance=user)
     if form.is_valid():
         form.save()
@@ -57,6 +57,10 @@ def passeios(request):
 
     return render(request, "passeios.html", contexto)
 
+'''
+def passeios(request):
+    agendamentos = Agendamentos.objects.filter(usuario=request.user)
+'''
 
 def cadastrarPasseio(request):
     form = PasseioForm(request.POST or None)
