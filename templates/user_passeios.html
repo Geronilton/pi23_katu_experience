@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h3>Meus Passeios</h3>
+    {% for agendamento in agendamentos%}
+        <table>
+            <tr>
+                <td>Passeio</td>
+                <td>Dia</td>
+                <td>Valor</td>
+            </tr>
+            <tr>
+                <td>{{agendamento.passeio}}</td>
+                <td>{{agendamento.data_proposta}}</td>
+                <td>{{agendamento.valor}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+{% endblock content %}

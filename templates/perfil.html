@@ -21,7 +21,7 @@
         <br>
         <div id="linha-horizontal"></div>
         {% else %}
-        <a id="linkes" href="">Meus Passeios</a>
+        <a id="linkes" href="{% url 'user_passeios' %}">Meus Passeios</a>
         <br>
         <div id="linha-horizontal"></div>
         <a id="linkes" href="{% url 'dados' user.cpf %}">Alterar dados da conta</a>
