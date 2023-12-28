@@ -6,10 +6,15 @@
     box-sizing: border-box;
     
 }
+head
+{
+    background-color: #F6F6E9;
+}
 html,body
 {
     box-sizing: border-box;
     font-family: 'Atkinson Hyperlegible', sans-serif;
+    background-color: #F6F6E9;
 
 }
 .conteiner
@@ -52,6 +57,7 @@ footer{
     justify-content: center;
     padding: 10%;
     display: grid;
+    background-color: #F6F6E9;
 }
 
 /* ========= Pagina de Passeios ========= */
