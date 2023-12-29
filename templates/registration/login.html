@@ -17,6 +17,10 @@
         height: 30px;
         width: 100px;
     }
+    p
+    {
+        text-align: center;
+    }
 </style>
 <div class="container">
 
@@ -24,8 +28,9 @@
     <form method="post">
         {% csrf_token %}
         
-        {{form.as_p}}     
+        {{form.as_p}}   
         <p><input class="submit" type="submit" value="Autenticar" /></p>
     </form>
+    <p>Não possui uma conta? Cadastre-se</p>
 </div>
 {% endblock %}
