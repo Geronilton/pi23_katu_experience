@@ -4,6 +4,28 @@
 {% load widget_tweaks %}
     
 {% block content %}
+<style type="text/css">
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    h1
+    {
+        padding-top: 10px;
+    }
+    input.submit
+    {
+        position: relative;
+        background-color: #2D441B;
+        border-radius: 5px;
+        color: #F6F6E9;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        height: 30px;
+        width: 200px;
+    }
+</style>
     <h1>Agendamento</h1>
     {% if mensagem %}
         {{mensagem}}
@@ -18,7 +40,7 @@
             <p>{{ form.qtd_pessoas.label}}: 
                 {% render_field form.qtd_pessoas %}
             </p>
-        <input type="submit" value="Confirmar Agendamento">
+        <input class="submit" type="submit" value="Confirmar Agendamento">
     </form>
 {% endblock content %}
 
