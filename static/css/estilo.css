@@ -28,7 +28,7 @@ html,body
     height: auto;
     min-height: 100vh;
     grid-template-columns: auto;
-    grid-template-rows: 150px auto 200px;
+    grid-template-rows: 150px auto 100px;
 
 }
 
@@ -42,10 +42,12 @@ main{
     background-color: #F6F6E9;
     grid-area: 'main';
     margin-top: 22px;
+   
 
 }
 footer{
     grid-area: 'footer';
+    margin-top: 22px;
 }
 
 /* Configuração do container Base das paginas */
@@ -105,7 +107,9 @@ footer{
     padding: 5px;
 }
 
-
+.agendamento{
+    padding-left: 10px;
+}
 
 
 

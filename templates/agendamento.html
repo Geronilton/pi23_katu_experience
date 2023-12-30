@@ -4,22 +4,28 @@
 {% load widget_tweaks %}
     
 {% block content %}
-    <h1>Agendamento</h1>
+<div class="agendamento">
+    <h2>Agendamento</h2>
     {% if mensagem %}
         {{mensagem}}
     {% endif %}
+    <p>Descrição: {{ passeio.descricao }} </p>
+    
     <form method="post">
         {% csrf_token %}
         <h5>Passeio: {{passeio.titulo}}</h5>
         <input type="hidden" name="passeio" value="{{passeio.id}}" />       
         <p>{{form.data_proposta.label}}: 
-            {% render_field form.data_proposta %}
+            {% render_field form.data_proposta %} <br>
+            Escolha uma data que você deseja. <br>
+            <span>Atenção:coloque a data no formato dd/mm/aaaa</span> 
         </p>
             <p>{{ form.qtd_pessoas.label}}: 
                 {% render_field form.qtd_pessoas %}
             </p>
         <input type="submit" value="Confirmar Agendamento">
     </form>
+</div>
 {% endblock content %}
 
 
