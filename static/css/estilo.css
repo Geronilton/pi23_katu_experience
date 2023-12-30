@@ -57,7 +57,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10%;
+    padding: 5%;
     display: grid;
     background-color: #F6F6E9;
 }
@@ -109,6 +109,8 @@ footer{
 
 .agendamento{
     padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 10%;
 }
 
 input.submit
