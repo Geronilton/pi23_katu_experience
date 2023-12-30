@@ -111,5 +111,15 @@ footer{
     padding-left: 10px;
 }
 
-
+input.submit
+{
+    position: relative;
+    background-color: #2D441B;
+    border-radius: 5px;
+    color: #F6F6E9;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    height: 30px;
+    width: 200px;
+}
 

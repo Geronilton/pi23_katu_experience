@@ -2,10 +2,10 @@
 
 
 {% load widget_tweaks %}
-    
+
 {% block content %}
-<div class="agendamento">
-    <h2>Agendamento</h2>
+<div class="agendamento"></div>
+    <h1>Agendamento</h1>
     {% if mensagem %}
         {{mensagem}}
     {% endif %}
@@ -23,7 +23,7 @@
             <p>{{ form.qtd_pessoas.label}}: 
                 {% render_field form.qtd_pessoas %}
             </p>
-        <input type="submit" value="Confirmar Agendamento">
+        <input class="submit" type="submit" value="Confirmar Agendamento">
     </form>
 </div>
 {% endblock content %}
