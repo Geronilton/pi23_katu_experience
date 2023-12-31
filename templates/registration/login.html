@@ -21,6 +21,9 @@
     {
         text-align: center;
     }
+    .cadastre-se{
+        color: rgb(239, 72, 72);
+    }
 </style>
 <div class="container">
 
@@ -31,6 +34,6 @@
         {{form.as_p}}   
         <p><input class="submit" type="submit" value="Login" /></p>
     </form>
-    <p>Não possui uma conta? Cadastre-se</p>
+    <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
 </div>
 {% endblock %}
