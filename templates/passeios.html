@@ -7,13 +7,11 @@
 {% block content %}
 
 
-    <div class="container">
-        <h1>Passeios</h1>
+        <h1 style="padding-left: 1%;">Passeios</h1>
 
         {% for passeio in lista_passeios %}
         <div class="cont-passeio">
 
-        <div class="cont-passeio">
             <div class="passeio">
                 <div class="titulo"><h3>{{passeio.titulo}}</h3></div>
                 <div class="descricao"><p>{{passeio.descricao}}</p></div>
@@ -26,13 +24,12 @@
                 <a href="{% url 'agendamento' passeio.id %}" class="editar">Agendar</a>
             {% endif %}
             </div>
-        </div>
+     
         {% empty %}
 
         <p>Nenhum Passeio cadastrado</p>
 
         {% endfor %}
-    </div>
-
+   </div>
 {% endblock %}
 

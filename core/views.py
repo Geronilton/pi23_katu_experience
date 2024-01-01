@@ -110,6 +110,14 @@ def deletarPasseio(request, id):
 
 @login_required
 def perfil(request):
+    agenda= Agendamento.objects.all()
+  
+    if request.user.is_superuser:
+        contexto = {
+        'agendamento':agenda
+        }
+        return render(request, 'admAgendamento.html',contexto)
+       
     return render(request, 'perfil.html')
 
 
@@ -149,3 +157,11 @@ def user_passeios(request):
 
     }
     return render(request,'user_passeios.html',contexto)
+
+def gerencia_passeio(request):
+    passeios = Passeio.objects.all()
+    contexto = {
+        "lista_passeios" : passeios
+    }
+
+    return render(request, "gerencia_passeio.html", contexto)

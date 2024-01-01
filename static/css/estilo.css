@@ -57,25 +57,27 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5%;
+
     display: grid;
     background-color: #F6F6E9;
 }
 
 /* ========= Pagina de Passeios ========= */
 .cont-passeio{
-    display: flex;
     gap: 20px;
     padding: auto;
+    flex-direction: row;
 }
 .passeio{
     background-color: #2D441B;
-    width: 300px;
+    width: 500px;
     border-radius: 10px;
-    padding: 10%;
+    padding: 3%;
     display: grid;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
+    margin: 1%;
+    
 }
 .titulo{
     color: #F6F6E9;
@@ -97,12 +99,14 @@ footer{
     text-align: center;
     margin-bottom: 5px;
     padding: 5px;
+    width: 150px;
 }
 .deletar{
     background-color: rgb(194, 11, 11);
     border-radius: 10px;
     text-align: center;
     padding: 5px;
+    width: 150px;
 }
 
 .agendamento{
