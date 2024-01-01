@@ -1,22 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %}
+<style type="text/css">
+    .agenda{
+        padding-left: 10px;
+        background-color:#2D441B ;
+        color: white;
+        width: 68%;
+        padding-bottom: 5px;
+        margin-left: 28%;
+    }
+    .tabelaSpace{
+        background-color: white;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        margin-right: 5px;
+    }
+    .conteudoMain{
+        display: block;
+    }
+    table{
+        border: 1px black solid;
+        margin-bottom: 5px;
+        margin-left: 9px;
+        width: 70%;
+        background-color: #75933D;
+        color: white;
 
-<h1>Agendamento</h1>
-{% for agenda in agendamento %}
-<table style="border: 1px black solid;">
-    <tr style="border: 1px black solid;">
-        <td>Data requisitada</td>
-        <td>Quantidade do grupo</td>
-        <td>Passeio</td>
-    </tr>
-    <tr>       
-        <td>{{agenda.data_proposta}}</td>
-        <td>{{agenda.qtd_pessoas}}</td>
-        <td>{{agenda.passeio_id}}</td>
-       
-    </tr>
-</table>
-{% empty %}
+    }
+    tr{
+        border: 1px black solid;
+    }
+    td{
+        border: 1px black solid;
+        padding: 8px;
+    }
+</style>
 
-        <p>Nada na Agenda</p>
-
-{% endfor %}
+{% include 'perfil.html' %}
+<div class="agenda">
+    <h1>Agendamentos</h1>
+    {% for agenda in agendamento %}
+    <div class="tabelaSpace">
+    <table>
+        <tr>
+            <td>Data requisitada</td>
+            <td>Quantidade do grupo</td>
+            <td>Passeio</td>
+        </tr>
+        <tr>       
+            <td>{{agenda.data_proposta}}</td>
+            <td>{{agenda.qtd_pessoas}}</td>
+            <td>{{agenda.passeio}}</td>
+        
+        </tr>
+    </table>
+    
+    {% empty %}
+            <p>Nada na Agenda</p>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}
