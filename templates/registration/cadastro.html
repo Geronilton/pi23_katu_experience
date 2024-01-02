@@ -10,13 +10,6 @@
             margin: 0;
             padding: 0;
         }
-        .container
-        {
-            background-color: #F6F6E9;
-            width: auto;
-            height: auto;
-            
-        }
         .cadastro
         {
             border-radius: 10px;
@@ -27,8 +20,6 @@
         }
         h1
         {
-            padding-top: 25px;
-            padding-bottom: 15px;
             text-align: center;
         }
         body
@@ -43,13 +34,12 @@
             margin-bottom: 7px;
             display: flex;
             justify-content: center;
-
         }
         .cpf
         {
             margin-left: 10px;
         }
-        .submit
+        input.submit
         {
             background-color: #2D441B;
             color: #F6F6E9;
@@ -67,31 +57,25 @@
 
     {% block content %}
     <div class="container">
-
-    
-    <div class="cadastro">
-        <h1>Cadastro</h1>
-        <form method="post">
-                {% csrf_token %}
-                <p>{{form.nome_completo.label}}: 
-                    {% render_field form.nome_completo %}
-                </p>
-
-                <div class="cpf">
-                    <p>{{ form.cpf.label}}: 
-                        {% render_field form.cpf %}
+        <div class="cadastro">
+            <h1>Cadastro</h1>
+            <form method="post">
+                    {% csrf_token %}
+                    <p>{{form.nome_completo.label}}: 
+                        {% render_field form.nome_completo %}
                     </p>
-                </div>
-
-                <p>{{form.email.label}}:
-                    {% render_field form.email %}
-                </p>
-
-                <p>Senha: {{ form.password1 }}</p>
-                <p class="senha">Confirme sua Senha:{{form.password2}} </p>
-
-                <p><input class="submit" type="submit" value="cadastrar"></p>
-        </form>
-    </div>
+                    <div class="cpf">
+                        <p>{{ form.cpf.label}}: 
+                            {% render_field form.cpf %}
+                        </p>
+                    </div>
+                    <p>{{form.email.label}}:
+                        {% render_field form.email %}
+                    </p>
+                    <p>Senha: {{ form.password1 }}</p>
+                    <p class="senha">Confirme sua Senha:{{form.password2}} </p>
+                    <input class="submit" type="submit" value="cadastrar">
+            </form>
+        </div>
     </div>
     {% endblock content %}
