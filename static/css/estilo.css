@@ -62,12 +62,13 @@ footer{
 
 /* ========= Pagina de Passeios ========= */
 .cont-passeio{
+    width: 60vw;
     gap: 50px;
     padding: auto;
     display: grid;
+    grid-template-areas: 'div div div';
 }
 .passeio{
-    
     background-color: #2D441B;
     width: 500px;
     border-radius: 10px;
@@ -76,7 +77,6 @@ footer{
     align-items: center;
     justify-content: center;
     margin: 1%;
-    
 }
 .titulo{
     color: #F6F6E9;
@@ -124,5 +124,37 @@ input.submit
     margin-left: 10px;
     height: 30px;
     width: 200px;
+}
+
+
+/* ========= Pagina CADASTRO / LOGIN ========= */
+
+.cont-cad{
+    width: 450px;
+    height: 450px;
+    background-color: #2D441B;
+    border-radius: 2%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.cont-cad > h1{
+    margin-left: 70px;
+}
+.cont-log{
+    width: 450px;
+    height: 450px;
+    background-color: #2D441B;
+    border-radius: 2%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.cont-log > h1{
+    margin-bottom: -100px;
+    margin-left: 60px;
+}
+.cont-cad, .cont-log > h1, p{
+    color: #F6F6E9;
 }
 

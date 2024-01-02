@@ -2,30 +2,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style type="text/css">
-    *
-    {
-        margin: 0;
-        padding: 0;
-    }
-    input.submit
-    {
-        position: relative;
-        background-color: #2D441B;
-        color: #F6F6E9;
-        border-radius: 5px;
-        height: 30px;
-        width: 100px;
-    }
-    p
-    {
-        text-align: center;
-    }
-    .cadastre-se{
-        color: rgb(239, 72, 72);
-    }
-</style>
+
 <div class="container">
+    <div class="cont-log">
 
     <h1>Login</h1>
     <br>
@@ -36,5 +15,6 @@
         <p><input class="submit" type="submit" value="Login" /></p>
     </form>
     <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
+</div>
 </div>
 {% endblock %}
