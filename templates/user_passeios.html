@@ -6,12 +6,14 @@
 <style type="text/css">
     .meusAgendamentos{
         padding-left: 15px;
-        padding-top: 5px;
+        padding-top: 10px;
         background-color:#2D441B ;
         color: white;
-        width: 60%;
+        width: 50%;
         padding-bottom: 5px;
         margin-left: 30%;
+        margin-top: 40px;
+        border-radius: 1%;
      
     }
     .tabelaSpace{
@@ -43,14 +45,14 @@
 <div class="conteudoMain">
     {% include 'perfil.html' %}
     <div class="meusAgendamentos">
-        <h3>Meus Agendamentos</h3>
+        <h3>Meus Agendamentos:</h3>
         {% for agendamento in agendamentos%}
         <div class="tabelaSpace">
             <table >
                     <tr >
-                        <td>Passeio</td>
-                        <td>Dia</td>
-                        <td>Valor</td>
+                        <td>Passeio:</td>
+                        <td>Dia:</td>
+                        <td>Valor:</td>
                     </tr>
                     <tr>
                         <td>{{agendamento.passeio}}</td>
