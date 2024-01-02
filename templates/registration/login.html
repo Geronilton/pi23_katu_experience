@@ -21,8 +21,13 @@
     {
         text-align: center;
     }
-    .cadastre-se{
-        color: rgb(239, 72, 72);
+    h1
+    {
+        text-align: center;
+    }
+    .cadastre-se
+    {
+        color: black;
     }
 </style>
 <div class="container">
@@ -32,8 +37,8 @@
     <form method="post">
         {% csrf_token %}
         
-        {{form.as_p}}   
-        <p><input class="submit" type="submit" value="Login" /></p>
+        {{form.as_p}}
+        <p><input class="submit" type="submit" value="Autenticar" /></p>
     </form>
     <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
 </div>
