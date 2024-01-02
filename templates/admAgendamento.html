@@ -24,7 +24,7 @@
         border: 1px black solid;
         margin-bottom: 5px;
         margin-left: 9px;
-        width: 70%;
+        width: 90%;
         background-color: #75933D;
         color: white;
 
@@ -45,15 +45,18 @@
     <div class="tabelaSpace">
     <table>
         <tr>
+            <td>Solicitante</td>
             <td>Data requisitada</td>
             <td>Quantidade do grupo</td>
             <td>Passeio</td>
+            <td>Telefone</td>
         </tr>
-        <tr>       
+        <tr>
+            <td>{{agenda.usuario.nome_completo}}</td>    
             <td>{{agenda.data_proposta}}</td>
             <td>{{agenda.qtd_pessoas}}</td>
             <td>{{agenda.passeio}}</td>
-        
+            <td>{{agenda.usuario.telefone}}</td>
         </tr>
     </table>
     

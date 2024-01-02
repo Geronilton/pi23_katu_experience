@@ -29,7 +29,6 @@ html,body
     min-height: 100vh;
     grid-template-columns: auto;
     grid-template-rows: 150px auto 100px;
-
 }
 
 
@@ -43,7 +42,6 @@ main{
     grid-area: 'main';
     margin-top: 22px;
    
-
 }
 footer{
     grid-area: 'footer';
