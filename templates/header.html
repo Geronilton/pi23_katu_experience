@@ -15,12 +15,12 @@
     }
     .right-header{
         gap: 10px;
+        margin-left: 900px;
         display: grid;
     }
     .box-user
     {
         align-items: center;
-        right:5%;
         justify-content: center;
         position: relative;
         display: flex;
@@ -64,7 +64,9 @@
 {% endblock interno %}
 
 <div class="cabecalho">
-    <img src="{% static 'img/img_logo/imagen_da_logo.jpg' %}" alt="Icon" width= "18%">
+    <a href="{% url 'index' %}">
+        <img src="{% static 'img/img_logo/imagen_da_logo.jpg' %}" alt="Icon" width= "55%" >
+    </a>
     <div class="right-header">
         <div class="box-user">
             {% if not user.is_authenticated %}
@@ -85,11 +87,11 @@
 
 
         </div>
-        <div class="icon">
+        <div class="icoM">
             <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
-            <img src="{% static 'img/icons/local.png' %}" alt="Icon" width= "40px" height="40px">
+            <a href="https://maps.app.goo.gl/oovts8rmGt9sceCC7"><img src="{% static 'img/icons/local.png' %}" alt="Icon" width= "40px" height="40px"></a>
             <img src="{% static 'img/icons/wpp.png' %}" alt="Icon" width= "40px" height="40px">
-            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
+            <img src="{% static 'img/icons/insta.png' %}" alt="Icon" width= "48px" height="48px">
         </div>
     </div>
 
