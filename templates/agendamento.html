@@ -19,12 +19,12 @@
     {% if mensagem %}
         {{mensagem}}
     {% endif %}
-    <p>Descrição: {{ passeio.descricao }} </p>
+    <p>Descrição: {{ passeio.descricao }}</p>
     
     <form method="post">
         {% csrf_token %}
         <h5>Passeio: {{passeio.titulo}}</h5>
-        <input type="hidden" name="passeio" value="{{passeio.id}}" />
+        <input type="hidden" name="passeio" value="{{passeio.id}}"/>
         <p>Escolha uma data que você deseja.<br>
         <span><h6>Atenção:</h6>Coloque a data no formato dd/mm/aaaa.</span></p>
         <p>

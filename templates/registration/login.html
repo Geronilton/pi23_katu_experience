@@ -11,8 +11,8 @@
     input.submit
     {
         position: relative;
-        background-color: #2D441B;
-        color: #F6F6E9;
+        background-color: #75933D;
+        color: black;
         border-radius: 5px;
         height: 30px;
         width: 100px;
@@ -24,22 +24,32 @@
     h1
     {
         text-align: center;
+        margin-top: 15px;
     }
     .cadastre-se
     {
-        color: black;
+        color:#F6F6E9;
+    }
+    .login
+    {
+        border-radius: 10px;
+        background-color: #2D441B;
+        height: 300px;
+        width: 400px;
+        color: #F6F6E9;
     }
 </style>
 <div class="container">
-
-    <h1>Login</h1>
-    <br>
-    <form method="post">
-        {% csrf_token %}
-        
-        {{form.as_p}}
-        <p><input class="submit" type="submit" value="Autenticar" /></p>
-    </form>
-    <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
+    <div class="login">
+        <h1>Login</h1>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            
+            {{form.as_p}}
+            <p><input class="submit" type="submit" value="Autenticar" /></p>
+        </form>
+        <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
+    </div>
 </div>
 {% endblock %}
