@@ -125,6 +125,14 @@ input.submit
     height: 30px;
     width: 200px;
 }
+#bubu
+{
+    background-color: red;
+    border-radius: 5px;
+    color: #F6F6E9;
+    height: 30px;
+    width: 100px;
+}
 
 
 /* ========= Pagina CADASTRO / LOGIN ========= */

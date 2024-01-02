@@ -4,26 +4,39 @@
 {% load widget_tweaks %}
 
 {% block content %}
+<style type="text/css">
+    h1
+    {
+        padding-bottom: 10px;
+    }
+    h6
+    {
+        color: red;
+    }
+</style>
 <div class="agendamento">
     <h1>Agendamento</h1>
     {% if mensagem %}
         {{mensagem}}
     {% endif %}
-    <p>Descrição: {{ passeio.descricao }} </p>
+    <p>Descrição: {{ passeio.descricao }}</p>
     
     <form method="post">
         {% csrf_token %}
         <h5>Passeio: {{passeio.titulo}}</h5>
-        <input type="hidden" name="passeio" value="{{passeio.id}}" />       
-        <p>{{form.data_proposta.label}}: 
-            {% render_field form.data_proposta %} <br>
-            Escolha uma data que você deseja. <br>
-            <span>Atenção:coloque a data no formato dd/mm/aaaa</span> 
+        <input type="hidden" name="passeio" value="{{passeio.id}}"/>
+        <p>Escolha uma data que você deseja.<br>
+        <span><h6>Atenção:</h6>Coloque a data no formato dd/mm/aaaa.</span></p>
+        <p>
+            {{form.data_proposta.label}}: 
+            {% render_field form.data_proposta %}<br>
         </p>
-            <p>{{ form.qtd_pessoas.label}}: 
-                {% render_field form.qtd_pessoas %}
-            </p>
+        <p>
+            {{ form.qtd_pessoas.label}}: 
+            {% render_field form.qtd_pessoas %}
+        </p>
         <input class="submit" type="submit" value="Confirmar Agendamento">
+        <button id="bubu"><a id="bubu" href="{% url 'passeios' %}">Voltar</a></button>
     </form>
 </div>
 {% endblock content %}
