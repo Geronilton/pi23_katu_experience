@@ -76,8 +76,13 @@
                     <a href="{% url 'cadastro' %}"> CADASTRO </a>
                 </div>
                 {% else %}
+                {% if user.is_superuser %}
                 <a href="{% url 'perfil' %}">Perfil</a>
+                {% else %}
+                <a href="{% url 'user_passeios' %}">Perfil</a>
                 {% endif %}
+            {% endif %}
+
 
         </div>
         <div class="icon">

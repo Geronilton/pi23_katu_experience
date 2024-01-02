@@ -5,11 +5,6 @@
 
     {% block interno1 %}
     <style type="text/css">
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
         .cadastro
         {
             border-radius: 10px;
@@ -73,7 +68,7 @@
                         {% render_field form.email %}
                     </p>
                     <p>Senha: {{ form.password1 }}</p>
-                    <p class="senha">Confirme sua Senha:{{form.password2}} </p>
+                    <p class="senha">Confirme sua Senha:{{form.password2}}</p>
                     <input class="submit" type="submit" value="cadastrar">
             </form>
         </div>

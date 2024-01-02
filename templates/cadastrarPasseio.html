@@ -1,52 +1,32 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
     {% block content %}
-    <div class="conteudo">
-        <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "110px" height="100px">
-        <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
-     
-        <div class="links">
-            <br> 
-            {% if user.is_superuser %}
-            <a id="linkes" href="{% url 'admAgendamentos' %}">Agendamentos</a>
-            <br>
-            <div id="linha-horizontal"></div>
-            
-            <a id="linkes" href="{% url 'passeios' %}">Passeios</a>
-            <br>
-            <div id="linha-horizontal"></div>
-            
-            <a id="linkes" href="{% url 'cadastrarPasseio' %}">Adicionar Passeio</a>
-            <br>
-            <div id="linha-horizontal"></div>
-            {% else %}
-            <a id="linkes" href="">Meus Passeios</a>
-            <br>
-            <div id="linha-horizontal"></div>
-            <a id="linkes" href="">Alterar dados da conta</a>
-            <br>
-            <div id="linha-horizontal"></div>
-            {% endif %}
-    
-            <a id="linkes" href="{% url 'logout' %}" style="color: red;">Sair</a>
-            <br>
-           
-        </div>
-        <br>
-        <div id="linha-vertical"></div>
-        </div>
+    {% include 'perfil.html' %}
+    <style type="text/css">
+        input.submit
+        {
+            position: absolute;
+            border-radius: 10px;
+            background-color: #2D441B;
+            color: #F6F6E9;
+            height: 30px;
+            width: 90px;
+            margin-top: 5px;
+        }
+        h1
+        {
+            padding-bottom: 20px;
+        }
+    </style>
         <div class="CP">
             <h1>Cadastrar Passeio</h1>
             <form method="post">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" value="cadastrar">
+                <input class="submit" type="submit" value="cadastrar">
             </form>
         </div>
     </div>
     {% endblock content %}
-
-    

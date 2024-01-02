@@ -3,19 +3,65 @@
 {% load static %}
 
 {% block content %}
-    <h3>Meus Passeios</h3>
-    {% for agendamento in agendamentos%}
-        <table>
-            <tr>
-                <td>Passeio</td>
-                <td>Dia</td>
-                <td>Valor</td>
-            </tr>
-            <tr>
-                <td>{{agendamento.passeio}}</td>
-                <td>{{agendamento.data_proposta}}</td>
-                <td>{{agendamento.valor}}</td>
-            </tr>
-        </table>
-        {% endfor %}
+<style type="text/css">
+    .meusAgendamentos{
+        padding-left: 15px;
+        padding-top: 5px;
+        background-color:#2D441B ;
+        color: white;
+        width: 60%;
+        padding-bottom: 5px;
+        margin-left: 30%;
+     
+    }
+    .tabelaSpace{
+        background-color: white;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        margin-right: 5px;
+    }
+    .conteudoMain{
+        margin-bottom: 31%;
+    }
+    table{
+        border: 1px black solid;
+        margin-bottom: 5px;
+        margin-left: 9px;
+        width: 60%;
+        background-color: #75933D;
+        color: white;
+
+    }
+    tr{
+        border: 1px black solid;
+    }
+    td{
+        border: 1px black solid;
+        padding: 10px;
+    }
+</style>
+<div class="conteudoMain">
+    {% include 'perfil.html' %}
+    <div class="meusAgendamentos">
+        <h3>Meus Agendamentos</h3>
+        {% for agendamento in agendamentos%}
+        <div class="tabelaSpace">
+            <table >
+                    <tr >
+                        <td>Passeio</td>
+                        <td>Dia</td>
+                        <td>Valor</td>
+                    </tr>
+                    <tr>
+                        <td>{{agendamento.passeio}}</td>
+                        <td>{{agendamento.data_proposta}}</td>
+                        <td>{{agendamento.passeio.valor}}</td>
+                    </tr>
+            </table>
+            {% empty %}
+            <p>Não há nenhum agendamento!</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock content %}

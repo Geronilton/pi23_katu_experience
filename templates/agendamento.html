@@ -2,46 +2,30 @@
 
 
 {% load widget_tweaks %}
-    
+
 {% block content %}
-<style type="text/css">
-    *
-    {
-        margin: 0;
-        padding: 0;
-    }
-    h1
-    {
-        padding-top: 10px;
-    }
-    input.submit
-    {
-        position: relative;
-        background-color: #2D441B;
-        border-radius: 5px;
-        color: #F6F6E9;
-        margin-bottom: 15px;
-        margin-left: 10px;
-        height: 30px;
-        width: 200px;
-    }
-</style>
+<div class="agendamento">
     <h1>Agendamento</h1>
     {% if mensagem %}
         {{mensagem}}
     {% endif %}
+    <p>Descrição: {{ passeio.descricao }} </p>
+    
     <form method="post">
         {% csrf_token %}
         <h5>Passeio: {{passeio.titulo}}</h5>
         <input type="hidden" name="passeio" value="{{passeio.id}}" />       
         <p>{{form.data_proposta.label}}: 
-            {% render_field form.data_proposta %}
+            {% render_field form.data_proposta %} <br>
+            Escolha uma data que você deseja. <br>
+            <span>Atenção:coloque a data no formato dd/mm/aaaa</span> 
         </p>
             <p>{{ form.qtd_pessoas.label}}: 
                 {% render_field form.qtd_pessoas %}
             </p>
         <input class="submit" type="submit" value="Confirmar Agendamento">
     </form>
+</div>
 {% endblock content %}
 
 

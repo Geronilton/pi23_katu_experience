@@ -1,8 +1,6 @@
-{% extends 'base.html' %}
-
 {% load static %}
-
-    {% block content %}
+ 
+<div class="perfil">
     <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "110px" height="100px">
     <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
  
@@ -13,7 +11,7 @@
         <br>
         <div id="linha-horizontal"></div>
         
-        <a id="linkes" href="{% url 'passeios' %}">Passeios</a>
+        <a id="linkes" href="{% url 'gerencia_passeio' %}">Passeios</a>
         <br>
         <div id="linha-horizontal"></div>
         
@@ -21,9 +19,6 @@
         <br>
         <div id="linha-horizontal"></div>
         {% else %}
-        <a id="linkes" href="{% url 'user_passeios' %}">Meus Passeios</a>
-        <br>
-        <div id="linha-horizontal"></div>
         <a id="linkes" href="{% url 'dados' user.cpf %}">Alterar dados da conta</a>
         <br>
         <div id="linha-horizontal"></div>
@@ -35,9 +30,4 @@
     </div>
     <br>
     <div id="linha-vertical"></div>
-    </div>
-
-
-    {% endblock content %}
-
-    
+</div>
