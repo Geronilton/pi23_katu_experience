@@ -5,7 +5,7 @@
     {% block content %}
     {% include 'perfil.html' %}
     <style type="text/css">
-        input.submit
+        .submite > input
         {
             position: absolute;
             border-radius: 5px;
@@ -39,7 +39,7 @@
             <form method="post">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input class="submit" type="submit" value="cadastrar">
+                <input class="submite" type="submit" value="cadastrar">
             </form>
         </div>
     

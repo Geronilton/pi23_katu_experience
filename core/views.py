@@ -21,6 +21,24 @@ def cadastro(request):
     return render(request, "registration/cadastro.html", contexto)
 
 
+def autenticar(request):
+    if request.POST:
+        usuario = request.POST['usuario']
+        senha = request.POST['senha']
+        user = authenticate(request, username=usuario,password= senha)
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            # contexto usado para mensagens de error.
+            contexto = {
+             'erro':'Por favor, entre com um CPF e senha corretos. Note que ambos os campos diferenciam maiúsculas e minúsculas.'
+            }
+            return render(request, 'registration\login.html',contexto)
+    else:
+        return render(request, 'registration\login.html')
+
+
 @login_required
 def dados(request, cpf):
     user = Usuario.objects.get(cpf=cpf)
@@ -34,19 +52,19 @@ def dados(request, cpf):
     return render(request, 'registration/cadastro.html', contexto)
 
 def cadastro_admin(request):
-    #if request.user.is_superuser:
-    form = UsuarioForm(request.POST or None)
-    if form.is_valid():
-        usuario = form.save(commit=False)
-        usuario.is_superuser = True
-        usuario.save()
+    if request.user.is_superuser:
+        form = UsuarioForm(request.POST or None)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            usuario.is_superuser = True
+            usuario.save()
+            return redirect('login')
+        contexto={
+            "form":form
+        }
+        return render(request, "registration/cadastro_admin.html", contexto)
+    else:
         return redirect('login')
-    contexto={
-        "form":form
-    }
-    return render(request, "registration/cadastro_admin.html", contexto)
-    #else:
-        #return redirect('login')
 
 
 def passeios(request):
@@ -57,10 +75,6 @@ def passeios(request):
 
     return render(request, "passeios.html", contexto)
 
-'''
-def passeios(request):
-    agendamentos = Agendamentos.objects.filter(usuario=request.user)
-'''
 
 def cadastrarPasseio(request):
     form = PasseioForm(request.POST or None)
@@ -92,21 +106,6 @@ def deletarPasseio(request, id):
     passeio.delete()
 
     return redirect('passeios')
-
-# def autenticacao(request):
-
-#     if request.POST:
-#         username = request.POST['usuario']
-#         password = request.POST['senha']
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('perfil')
-#         else:
-#            return render(request, 'registration\login.html')
-#     else:
-#         return render(request, 'registration\login.html')
-    
 
 @login_required
 def perfil(request):

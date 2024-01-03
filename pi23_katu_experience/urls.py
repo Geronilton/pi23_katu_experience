@@ -17,11 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
-from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio
-from django.contrib.auth.views import LoginView, LogoutView
+from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/',autenticar, name='login'),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("perfil/", perfil, name="perfil"),
 
