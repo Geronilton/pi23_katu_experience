@@ -150,7 +150,9 @@ input.submit
 .cont-cad > h1{
     margin-left: 20px;
 }
-
+.cont-cad > p{
+    margin-left: 100px;
+}
 .cont-log{
     width: 450px;
     height: 450px;
