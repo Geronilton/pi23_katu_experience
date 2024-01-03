@@ -6,22 +6,21 @@
     input.submit
     {
         background-color: #75933D;
-        margin-bottom: 10px;
     }
     .cont-log
     {
         border-radius: 10px;
-        height: 400px;
+        height: 380px;
         margin-top: 20px;
     }
     p
     {
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 10px;    
     }
     h1
     {
-        margin-top: 25px;
+        margin-top: 35px;
     }
     .cadastre-se
     {
@@ -39,8 +38,9 @@
         
         {{form.as_p}} 
         <p><input class="submit" type="submit" value="Login" /></p>
+        <p class="cadastre-se">Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
     </form>
-    <p class="cadastre-se">Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
+    
 </div>
 </div>
 {% endblock %}
