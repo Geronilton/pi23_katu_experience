@@ -7,26 +7,26 @@
     {% block content %}
     <div class="container">
 
-        <div class="cont-cad">
+        <div class="cont-cadADM">
         <h1>Cadastra um Administrador</h1>
         <form method="post">
                 {% csrf_token %}
-                <p>{{form.nome_completo.label}}: 
+                <p>{{form.nome_completo.label}}: </br>
                     {% render_field form.nome_completo %}
                 </p>
 
                 <div class="cpf">
-                    <p>{{ form.cpf.label}}: 
+                    <p>{{ form.cpf.label}}: </br>
                         {% render_field form.cpf %}
                     </p>
                 </div>
 
-                <p>{{form.email.label}}:
+                <p>{{form.email.label}}: </br>
                     {% render_field form.email %}
                 </p>
 
-                <p>Senha: {{ form.password1 }}</p>
-                <p class="senha">Confirme sua Senha:{{form.password2}} </p>
+                <p>Senha: </br>{{ form.password1 }}</p> 
+                <p class="senha">Confirme sua Senha: </br> {{form.password2}} </p> 
 
                 <p><input class="submit" type="submit" value="Cadastrar"></p>
         </form>

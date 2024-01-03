@@ -3,6 +3,66 @@
 {% block interno %}
 
 <style type="text/css">
+    .cabecalho{
+        height: 115px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #2D441B;
+        color: #F6F6E9;
+        margin-bottom: 50px;
+        padding: 15px;
+    }
+    .right-header{
+        gap: 10px;
+        margin-left: 900px;
+        display: grid;
+    }
+    .box-user
+    {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        display: flex;
+        gap: 7%;
+        list-style: none;
+    }
+    .box-cadastro{
+        border-left: 10px, rgb(255, 255, 255);
+    }
+    a
+    {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        width: auto;
+        height: auto;
+    }
+    a:hover{
+        color: #dde03e;
+    }
+
+    nav{
+        background-color: #75933D;
+        list-style-type: none;
+        height: 55px;
+        margin-top: -50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 0.1rem 0.5rem #2D441B;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+    }
+    .icoM
+    {
+        margin-left: 30px;
+    }
+    nav > li{
+        padding-right: 5%;
+        padding-top: 3px;
+    }
     
 
 </style>
@@ -24,24 +84,22 @@
                 </div>
                 {% else %}
                 {% if user.is_superuser %}
-                <a href="{% url 'perfil' %}">Perfil</a>
+                <a href="{% url 'perfil' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
                 {% else %}
-                <a href="{% url 'user_passeios' %}">Perfil</a>
+                <a href="{% url 'user_passeios' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
                 {% endif %}
             {% endif %}
-
-
-        </div>
-        <div class="icoM">
-            <img src="{% static 'img/icons/tele.png' %}" alt="Icon" width= "40px" height="40px">
-            <a href="https://maps.app.goo.gl/oovts8rmGt9sceCC7"><img src="{% static 'img/icons/local.png' %}" alt="Icon" width= "40px" height="40px"></a>
-            <img src="{% static 'img/icons/wpp.png' %}" alt="Icon" width= "40px" height="40px">
-            <img src="{% static 'img/icons/insta.png' %}" alt="Icon" width= "48px" height="48px">
-        </div>
+         </div>
     </div>
 
 </div>
 
 <nav>
+    <div class="icoM">
+        <img src="{% static 'img/icons/telegram.png' %}" alt="Icon" width= "55px" height="55px">
+        <a href="https://maps.app.goo.gl/oovts8rmGt9sceCC7"><img src="{% static 'img/icons/geolocalização.png' %}" alt="Icon" width= "55px" height="55px"></a>
+        <img src="{% static 'img/icons/whatsapp.png' %}" alt="Icon" width= "55px" height="55px">
+        <img src="{% static 'img/icons/instagram.png' %}" alt="Icon" width= "55px" height="55px">
+    </div>
     <li><a href="{% url 'passeios' %}"><h3>Listar Passeios</h3></a></li>
 </nav>
