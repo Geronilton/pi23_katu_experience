@@ -9,7 +9,7 @@
         padding-top: 10px;
         background-color:#2D441B ;
         color: white;
-        width: 50%;
+        width: 69%;
         padding-bottom: 5px;
         margin-left: 30%;
         margin-top: 40px;
@@ -25,11 +25,20 @@
     .conteudoMain{
         margin-bottom: 31%;
     }
+    .cancelarAgendamento
+    {
+        border: 1px #000000 solid ;
+        background-color: #2D441B;
+        padding: 2%;
+        border-radius: 5%;
+        width: 200px;
+        text-align: center;
+    }
     table{
         border: 1px black solid;
         margin-bottom: 5px;
         margin-left: 9px;
-        width: 60%;
+        width: 80%;
         background-color: #75933D;
         color: white;
 
@@ -58,6 +67,7 @@
                         <td>{{agendamento.passeio}}</td>
                         <td>{{agendamento.data_proposta}}</td>
                         <td>{{agendamento.passeio.valor}}</td>
+                        <td><div class="cancelarAgendamento"><a href="{% url 'cancelar_agendamento' agendamento.id %}"> Cancelar Agendamento </a></div></td>
                     </tr>
             </table>
             {% empty %}

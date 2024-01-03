@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
-from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar
+from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar,cancelar_agendamento
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -40,6 +40,8 @@ urlpatterns = [
     path("agendamento/<int:id>/", agendamento, name="agendamento"),
     path("admAgendamentos/", admAgendamentos, name="admAgendamentos"),
     path('gerencia_passeio/', gerencia_passeio, name= 'gerencia_passeio'),
+    path("cancelar_agendamento/<int:id>/", cancelar_agendamento, name="cancelar_agendamento"),
+
 
 
 ]

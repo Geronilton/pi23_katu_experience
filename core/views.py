@@ -91,31 +91,30 @@ def cadastrarPasseio(request):
 
 @login_required
 def editarPasseio(request,id):
-    passeio = Passeio.objects.get(pk=id)
-    form = PasseioForm(request.POST or None,instance=passeio)
-
-    if form.is_valid():
-        form.save()
-        return redirect('passeios')
-    
-    contexto = {
-        "form": form
-    }
+    if request.user.is_superuser:
+        passeio = Passeio.objects.get(pk=id)
+        form = PasseioForm(request.POST or None,instance=passeio)
+        if form.is_valid():
+            form.save()
+            return redirect('passeios')
+        
+        contexto = {
+            "form": form
+        }
 
     return render(request, "cadastrarPasseio.html",contexto)
 
 @login_required
 def deletarPasseio(request, id):
-    passeio = Passeio.objects.get(pk=id)
-    passeio.delete()
-
+    if request.user.is_superuser:
+        passeio = Passeio.objects.get(pk=id)
+        passeio.delete()
     return redirect('passeios')
 
 
 @login_required
 def perfil(request):
-    agenda= Agendamento.objects.all()
-  
+    agenda= Agendamento.objects.all()  
     if request.user.is_superuser:
         contexto = {
         'agendamento':agenda
@@ -148,10 +147,11 @@ def agendamento(request,id):
 
 @login_required
 def admAgendamentos(request):
-    agenda= Agendamento.objects.all()
-    contexto = {
-        'agendamento':agenda
-    }
+    if request.user.is_superuser:
+        agenda= Agendamento.objects.all()
+        contexto = {
+            'agendamento':agenda
+        }
     return render(request , "admAgendamento.html", contexto)
 
 @login_required
@@ -165,9 +165,16 @@ def user_passeios(request):
 
 @login_required
 def gerencia_passeio(request):
-    passeios = Passeio.objects.all()
-    contexto = {
-        "lista_passeios" : passeios
-    }
+    if request.user.is_superuser:
+        passeios = Passeio.objects.all()
+        contexto = {
+            "lista_passeios" : passeios
+        }
 
     return render(request, "gerencia_passeio.html", contexto)
+
+def cancelar_agendamento(request,id):
+    agendamento = Agendamento.objects.get(pk=id)
+    agendamento.delete()
+
+    return redirect('user_passeios')
