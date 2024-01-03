@@ -52,7 +52,7 @@ def dados(request, cpf):
     return render(request, 'registration/cadastro.html', contexto)
 
 def cadastro_admin(request):
-    #if request.user.is_superuser:
+    if request.user.is_superuser:
         form = UsuarioForm(request.POST or None)
         if form.is_valid():
             usuario = form.save(commit=False)
@@ -63,7 +63,7 @@ def cadastro_admin(request):
             "form":form
         }
         return render(request, "registration/cadastro_admin.html", contexto)
-    #else:
+    else:
         return redirect('login')
 
 
@@ -75,18 +75,21 @@ def passeios(request):
 
     return render(request, "passeios.html", contexto)
 
-
+@login_required
 def cadastrarPasseio(request):
-    form = PasseioForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect(passeios)
+    if request.user.is_superuser:
+        form = PasseioForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect(passeios)
+
     contexto = {
-        "form": form
-    }
+            "form": form,
+        }
 
     return render(request, "cadastrarPasseio.html",contexto)
 
+@login_required
 def editarPasseio(request,id):
     passeio = Passeio.objects.get(pk=id)
     form = PasseioForm(request.POST or None,instance=passeio)
@@ -101,11 +104,13 @@ def editarPasseio(request,id):
 
     return render(request, "cadastrarPasseio.html",contexto)
 
+@login_required
 def deletarPasseio(request, id):
     passeio = Passeio.objects.get(pk=id)
     passeio.delete()
 
     return redirect('passeios')
+
 
 @login_required
 def perfil(request):
@@ -119,7 +124,7 @@ def perfil(request):
        
     return render(request, 'perfil.html')
 
-
+@login_required
 def agendamento(request,id):
     form = AgendamentoForm(request.POST or None)
     passeio = Passeio.objects.get(pk=id)
@@ -141,6 +146,7 @@ def agendamento(request,id):
 
     return render(request, 'agendamento.html', contexto)
 
+@login_required
 def admAgendamentos(request):
     agenda= Agendamento.objects.all()
     contexto = {
@@ -148,7 +154,7 @@ def admAgendamentos(request):
     }
     return render(request , "admAgendamento.html", contexto)
 
-
+@login_required
 def user_passeios(request):
     agendamentos = Agendamento.objects.filter(usuario=request.user)
     contexto = {
@@ -157,6 +163,7 @@ def user_passeios(request):
     }
     return render(request,'user_passeios.html',contexto)
 
+@login_required
 def gerencia_passeio(request):
     passeios = Passeio.objects.all()
     contexto = {
