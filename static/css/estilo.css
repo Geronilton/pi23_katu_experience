@@ -138,7 +138,7 @@ input.submit
 
 /* ========= Pagina CADASTRO / LOGIN ========= */
 
-.cont-cad{
+.cont-cad, .cont-cadADM{
     width: 550px;
     height: 550px;
     background-color: #2D441B;
@@ -147,11 +147,15 @@ input.submit
     align-items: center;
     justify-content: center;
 }
-.cont-cad > h1{
+.cont-cad, .cont-cadADM > h1{
     margin-left: 20px;
 }
-.cont-cad > p{
+.cont-cad, .cont-cadADM> p{
     margin-left: 100px;
+}
+.cont-cadADM form{
+    margin-left: 150px;
+    margin-top: -40px;
 }
 .cont-log{
     width: 450px;
@@ -163,10 +167,16 @@ input.submit
     justify-content: center;
 }
 .cont-log > h1{
-    margin-bottom: -100px;
-    margin-left: 60px;
+    margin-bottom: -60px;
+    margin-left: 75px;
 }
-.cont-cad, .cont-log > h1, p{
+
+.cont-log .submit{
+    margin-left: 30px;
+    margin-top: 20px;
+    
+}
+.cont-cad, .cont-log, .cont-cadADM > h1, p{
     color: #F6F6E9;
 }
 
