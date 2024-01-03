@@ -116,14 +116,15 @@ footer{
 
 input.submit
 {
-    position: relative;
-    background-color: #2D441B;
-    border-radius: 5px;
-    color: #F6F6E9;
     margin-bottom: 15px;
-    margin-left: 10px;
+    margin-left: -5px;
     height: 30px;
     width: 200px;
+    position: relative;
+    background-color: #75933D;;
+    border-radius: 5px;
+    color: #F6F6E9;
+   
 }
 #bubu
 {
@@ -138,8 +139,8 @@ input.submit
 /* ========= Pagina CADASTRO / LOGIN ========= */
 
 .cont-cad{
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     background-color: #2D441B;
     border-radius: 2%;
     display: grid;
@@ -147,8 +148,9 @@ input.submit
     justify-content: center;
 }
 .cont-cad > h1{
-    margin-left: 70px;
+    margin-left: 20px;
 }
+
 .cont-log{
     width: 450px;
     height: 450px;
