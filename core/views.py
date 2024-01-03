@@ -34,7 +34,7 @@ def dados(request, cpf):
     return render(request, 'registration/cadastro.html', contexto)
 
 def cadastro_admin(request):
-    if request.user.is_superuser:
+    #if request.user.is_superuser:
         form = UsuarioForm(request.POST or None)
         if form.is_valid():
             usuario = form.save(commit=False)
@@ -45,7 +45,7 @@ def cadastro_admin(request):
             "form":form
         }
         return render(request, "registration/cadastro_admin.html", contexto)
-    else:
+    #else:
         return redirect('login')
 
 

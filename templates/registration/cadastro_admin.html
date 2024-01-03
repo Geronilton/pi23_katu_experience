@@ -2,73 +2,13 @@
 {% extends 'base.html' %}
 
 {% load widget_tweaks %}
-    {% block interno1 %}
-    <style type="text/css">
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-        .container
-        {
-            background-color: #F6F6E9;
-            width: auto;
-            height: auto;
-            
-        }
-        .cadastro
-        {
-            border-radius: 10px;
-            background-color: #2D441B;
-            height: 300px;
-            width: 400px;
-            color: #F6F6E9;
-        }
-        h1
-        {
-            padding-top: 25px;
-            padding-bottom: 15px;
-            text-align: center;
-        }
-        body
-        {
-            display: flex;
-            justify-content: center;
-            margin-top: 10%;
-        }
-        p
-        {
-            text-align: justify;
-            margin-bottom: 7px;
-            display: flex;
-            justify-content: center;
-
-        }
-        .cpf
-        {
-            margin-left: 10px;
-        }
-        .submit
-        {
-            background-color: #2D441B;
-            color: #F6F6E9;
-            margin-top: 10px;
-            position:absolute;
-            height: 25px;
-            width: 70px;
-        }
-        .senha
-        {
-            margin-top: 35px;
-        }
-    </style>
-    {% endblock interno1 %}
+    
 
     {% block content %}
     <div class="container">
 
     
-    <div class="cadastro">
+    <div class="cont-cad">
         <h1>Cadastra um Administrador</h1>
         <form method="post">
                 {% csrf_token %}
