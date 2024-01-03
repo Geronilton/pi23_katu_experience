@@ -10,10 +10,15 @@
     <br>
     <form method="post">
         {% csrf_token %}
-        
-        {{form.as_p}}   
-        <p><input class="submit" type="submit" value="Login" /></p>
+        {% if erro %}
+        <h5>{{erro}}</h5>
+        {% endif %}
+       <p>CPF: <input type="text" name="usuario"></p>
+       <p>Senha: <input type="password" name="senha"></p>
+
+        <input class="submit" type="submit" value="Autenticar">
     </form>
+   
     <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
 </div>
 </div>
