@@ -13,6 +13,16 @@
         margin-bottom: 50px;
         padding: 15px;
     }
+    #perf
+    {
+        margin-bottom: 50px;
+        padding-left: 15px;
+    }
+    #nameU
+    {
+        padding-right: 30px;
+        
+    }
     .right-header{
         gap: 10px;
         margin-left: 900px;
@@ -23,9 +33,10 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        display: flex;
         gap: 7%;
         list-style: none;
+        display: inline;
+        
     }
     .box-cadastro{
         border-left: 10px, rgb(255, 255, 255);
@@ -84,11 +95,14 @@
                 </div>
                 {% else %}
                 {% if user.is_superuser %}
-                <a href="{% url 'perfil' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
+                <a id="perf" href="{% url 'perfil' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
+                <p id="nameU">{{ user.nome_completo }}</p>
                 {% else %}
-                <a href="{% url 'user_passeios' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
+                <a id="perf" href="{% url 'user_passeios' %}"><img src="{% static 'img/icons/usuario1.png' %}" alt="Icon" width= "60px" height="60px"></a>
+                <p id="nameU">{{ user.nome_completo }}</p>
                 {% endif %}
             {% endif %}
+            
          </div>
     </div>
 
@@ -96,10 +110,10 @@
 
 <nav>
     <div class="icoM">
-        <img src="{% static 'img/icons/telegram.png' %}" alt="Icon" width= "55px" height="55px">
+        <a href="https://t.me/geysonfernandes"><img src="{% static 'img/icons/telegram.png' %}" alt="Icon" width= "55px" height="55px"></a>
         <a href="https://maps.app.goo.gl/oovts8rmGt9sceCC7"><img src="{% static 'img/icons/geolocalização.png' %}" alt="Icon" width= "55px" height="55px"></a>
-        <img src="{% static 'img/icons/whatsapp.png' %}" alt="Icon" width= "55px" height="55px">
-        <img src="{% static 'img/icons/instagram.png' %}" alt="Icon" width= "55px" height="55px">
+        <img src="{% static 'img/icons/whatsapp.png' %}" alt="Icon" width= "55px" height="55px"></a>
+        <a href="https://www.instagram.com/katu_experiencias?igsh=MWExNDVkaDc4MGV6dg=="><img src="{% static 'img/icons/instagram.png' %}" alt="Icon" width= "55px" height="55px"></a>
     </div>
     <li><a href="{% url 'passeios' %}"><h3>Listar Passeios</h3></a></li>
 </nav>
