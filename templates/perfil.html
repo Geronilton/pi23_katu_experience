@@ -1,9 +1,11 @@
 {% load static %}
  
 <div class="perfil">
-    <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "110px" height="100px">
+    
+    <img id="usuary" src="{% static 'img/icons/usuario2.png' %}" alt="img_usuario" width= "160px" height="150px">
+    
     <p id="paragrafo"> Olá, {{ user.nome_completo }} </p>
- 
+    
     <div class="links">
         <br> 
         {% if user.is_superuser %}
