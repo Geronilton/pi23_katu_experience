@@ -198,9 +198,3 @@ input.submit
 }
 
 /* ========= Responsividade ========= */
-
-@media (min-width: 768px){
-    .cont-passeio{
-        display: none;
-    }
-}
