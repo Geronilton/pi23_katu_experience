@@ -32,9 +32,9 @@
 #linha-vertical
 {
     border-left: 3px solid #2D441B;
-    height: 700px;
+    height: 100%;
     left: 350px;
-    top: 215px;
+    top: 170px;
     margin-left: -4px;
     position: absolute;
    
