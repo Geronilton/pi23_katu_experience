@@ -11,7 +11,8 @@
     {
         border-radius: 10px;
         height: 380px;
-        margin-top: 20px;
+        margin-top:8%;
+        margin-left: 35%;
     }
     p
     {
@@ -22,29 +23,34 @@
     {
         margin-top: 35px;
     }
+    #errot
+    {
+        color: red;
+        padding-top: 4px;
+        padding-left: 21%;
+    }
     .cadastre-se
     {
         margin-bottom: 60px;
     }
 </style>
+    {% if erro %}
+        <h5 id="errot">{{erro}}</h5>
+    {% endif %}
 
-<div class="container">
     <div class="cont-log">
 
-    <h1>Login</h1>
-    <br>
-    <form method="post">
-        {% csrf_token %}
-        {% if erro %}
-        <h5>{{erro}}</h5>
-        {% endif %}
-       <p>CPF: </br> <input type="text" name="usuario"></p>
-       <p>Senha: </br> <input type="password" name="senha"></p>
+        <h1>Login</h1>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+        <p>CPF: </br> <input type="text" name="usuario"></p>
+        <p>Senha: </br> <input type="password" name="senha"></p>
 
-        <input class="submit" type="submit" value="Login">
-    </form>
-   
-    <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
-</div>
-</div>
+            <input class="submit" type="submit" value="Login">
+        </form>
+    
+        <p>Não possui uma conta?<a href="{% url 'cadastro' %}" class="cadastre-se"> Cadastre-se</a></p>
+    </div>
+
 {% endblock %}
