@@ -9,6 +9,7 @@
         color: white;
         width: 68%;
         padding-bottom: 5px;
+        padding: 1%;
         margin-left: 28%;
         margin-bottom: 30%;
         border-radius: 10px;
@@ -38,18 +39,40 @@
         border: 1px black solid;
         padding: 8px;
     }
+    .Buscar{
+        margin-bottom: 15px;
+        margin-left: -5px;
+        height: 30px;
+        width: 100px;
+        position: relative;
+        background-color: #75933D;;
+        border-radius: 5px;
+        color: #F6F6E9;
+    }
+    
 </style>
 
 {% include 'perfil.html' %}
 <div class="agenda">
     <h1>Agendamentos</h1>
+
+<h5>Filtrar</h5>
+    <form action="{% url 'admAgendamentos' %}" method="post">
+        {% csrf_token %}
+        <p>
+            Data: <input type="text" name="data_proposta" value="{{data_proposta}}" placeholder="aaaa-mm-dd"/>
+            <br> <br>
+        <input class="Buscar" type="submit" value="Buscar"> 
+    </p> 
+    </form>
+
     {% for agenda in agendamento %}
     <div class="tabelaSpace">
     <table>
         <tr>
             <td>Solicitante</td>
             <td>Data requisitada</td>
-            <td>Quantidade do grupo</td>
+            <td>Tamanho do grupo</td>
             <td>Passeio</td>
             <td>Telefone</td>
         </tr>
