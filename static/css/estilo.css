@@ -67,6 +67,7 @@ footer{
     padding: auto;
     display: grid;
     grid-template-areas: 'div div div';
+    margin-left: 9%;
 }
 .passeio{
     background-color: #2D441B;
@@ -74,9 +75,8 @@ footer{
     border-radius: 10px;
     padding: 3%;
     display: grid;
-    align-items: center;
-    justify-content: center;
     margin: 1%;
+    display: flex;
 }
 .titulo{
     color: #F6F6E9;
@@ -179,4 +179,18 @@ input.submit
 .cont-cad, .cont-log, .cont-cadADM > h1, p{
     color: #F6F6E9;
 }
-
+#ruby
+{
+    text-align: center;
+}
+#impas
+{
+    display: flex;
+    margin-left: 10px;
+}
+.info
+{
+    display: flex;
+    display: grid;
+    margin-left: 30px;
+}

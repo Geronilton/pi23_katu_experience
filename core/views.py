@@ -52,19 +52,19 @@ def dados(request, cpf):
     return render(request, 'registration/cadastro.html', contexto)
 
 def cadastro_admin(request):
-    #if request.user.is_superuser:
-    form = UsuarioForm(request.POST or None)
-    if form.is_valid():
-        usuario = form.save(commit=False)
-        usuario.is_superuser = True
-        usuario.save()
+    if request.user.is_superuser:
+        form = UsuarioForm(request.POST or None)
+        if form.is_valid():
+            usuario = form.save(commit=False)
+            usuario.is_superuser = True
+            usuario.save()
+            return redirect('login')
+        contexto={
+            "form":form
+        }
+        return render(request, "registration/cadastro_admin.html", contexto)
+    else:
         return redirect('login')
-    contexto={
-        "form":form
-    }
-    return render(request, "registration/cadastro_admin.html", contexto)
-    #else:
-        #return redirect('login')
 
 
 def passeios(request):
