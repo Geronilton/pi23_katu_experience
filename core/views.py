@@ -148,11 +148,18 @@ def agendamento(request,id):
 @login_required
 def admAgendamentos(request):
     if request.user.is_superuser:
-        agenda= Agendamento.objects.all()
-        contexto = {
+        data =''
+        if request.POST:
+            data = request.POST['data_proposta']
+            agenda= Agendamento.objects.filter(data_proposta=data)
+        else:
+            agenda= Agendamento.objects.all()
+
+    contexto = {
             'agendamento':agenda
         }
     return render(request , "admAgendamento.html", contexto)
+
 
 @login_required
 def user_passeios(request):
