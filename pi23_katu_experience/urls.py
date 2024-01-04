@@ -19,6 +19,10 @@ from django.urls import path
 from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
 from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar,cancelar_agendamento
 from django.contrib.auth.views import LogoutView
+#-----------------UPLOAD DE IMAGENS DOS PASSEIOS---------------------
+from django.conf import settings
+from django.conf.urls.static import static
+from core import views
 
 urlpatterns = [
     path('login/',autenticar, name='login'),
@@ -44,4 +48,4 @@ urlpatterns = [
 
 
 
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

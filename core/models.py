@@ -17,6 +17,8 @@ class Passeio(models.Model):
     titulo = models.CharField("Titulo", max_length= 100)
     descricao = models.TextField("Descrição")
     valor = models.DecimalField(max_digits=5, decimal_places= 2)
+#-----------------UPLOAD DE IMAGENS DOS PASSEIOS----------------------------
+    imagem = models.ImageField(upload_to = 'passeio', blank = True, null = True)
     
 
     
