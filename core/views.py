@@ -112,10 +112,10 @@ def editarPasseio(request,id):
 
 @login_required
 def deletarPasseio(request, id):
-    if request.user.is_superuser:
-        passeio = Passeio.objects.get(pk=id)
-        passeio.delete()
-    return redirect('passeios')
+
+    passeio = Passeio.objects.get(pk=id)
+    passeio.delete()
+    return redirect('gerencia_passeio')
 
 
 @login_required
