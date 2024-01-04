@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import index,passeios,cadastrarPasseio,editarPasseio,deletarPasseio,agendamento,admAgendamentos
-from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar,cancelar_agendamento
+from core.views import cadastro, perfil, cadastro_admin,dados, user_passeios,gerencia_passeio,autenticar,desconectar,cancelar_agendamento
 from django.contrib.auth.views import LogoutView
 #-----------------UPLOAD DE IMAGENS DOS PASSEIOS---------------------
 from django.conf import settings
@@ -26,7 +26,7 @@ from core import views
 
 urlpatterns = [
     path('login/',autenticar, name='login'),
-    path("logout/", LogoutView.as_view(), name="logout"),
+    path("desconectar/",desconectar, name="desconectar"),
     path("perfil/", perfil, name="perfil"),
 
     path('admin/', admin.site.urls),

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UsuarioForm,PasseioForm, AgendamentoForm
 from .models import Usuario, Agendamento, Passeio
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 # Create your views here.
@@ -37,6 +37,12 @@ def autenticar(request):
             return render(request, 'registration\login.html',contexto)
     else:
         return render(request, 'registration\login.html')
+
+
+
+def desconectar(request):
+    logout(request)
+    return redirect('index')
 
 
 @login_required
