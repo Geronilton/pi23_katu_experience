@@ -36,7 +36,7 @@
     </style>
         <div class="CP">
             <h1>Cadastrar Passeio</h1>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form.as_p}}
                 <input class="submite" type="submit" value="cadastrar">

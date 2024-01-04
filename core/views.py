@@ -78,13 +78,13 @@ def passeios(request):
 @login_required
 def cadastrarPasseio(request):
     if request.user.is_superuser:
-        form = PasseioForm(request.POST or None)
+        form = PasseioForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
             return redirect(passeios)
 
     contexto = {
-            "form": form,
+            "form": form
         }
 
     return render(request, "cadastrarPasseio.html",contexto)
@@ -93,7 +93,7 @@ def cadastrarPasseio(request):
 def editarPasseio(request,id):
     if request.user.is_superuser:
         passeio = Passeio.objects.get(pk=id)
-        form = PasseioForm(request.POST or None,instance=passeio)
+        form = PasseioForm(request.POST or None,request.FILES or None, instance=passeio)
         if form.is_valid():
             form.save()
             return redirect('passeios')
