@@ -179,6 +179,8 @@ input.submit
 .cont-cad, .cont-log, .cont-cadADM > h1, p{
     color: #F6F6E9;
 }
+
+
 #ruby
 {
     text-align: center;
@@ -193,4 +195,12 @@ input.submit
     display: flex;
     display: grid;
     margin-left: 30px;
+}
+
+/* ========= Responsividade ========= */
+
+@media (min-width: 768px){
+    .cont-passeio{
+        display: none;
+    }
 }
